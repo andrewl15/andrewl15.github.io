@@ -1,0 +1,2100 @@
+white(alpha)
+  rgba(255,255,255,alpha)
+black(alpha)
+  rgba(0,0,0,alpha)
+
+$gold-l = #DBB25E  
+$gold-m = #907335 
+$gold-d = darken(#836930,8)
+
+$wallpaper-pattern = repeating-linear-gradient(to right, transparent, transparent 5px,
+                                                 black(.05) 5px, black(.1) 10px)
+
+body
+  height: 100vh
+  display: grid
+  place-items: center
+  font-size: 10px
+  // make the drawing bigger
+  // font-size: 12px
+  min-height: 37em
+  background-color: darken(darkolivegreen,12)
+  background-image: $wallpaper-pattern
+
+:root
+  --gap: 1.2em
+  
+.cabinet
+  width: 72em
+  height: 80%
+  @media screen and (min-height: 500px)
+    height: 42em
+    // height: 37em
+  padding: var(--gap)
+  display: grid
+  grid-template-columns 1fr 1fr 1fr 1fr
+  grid-template-rows: 1.5fr 1fr 1fr 1fr
+  gap: var(--gap)
+  background-repeat: no-repeat
+  background-image: radial-gradient(circle at top right, black(.2) 10%, transparent 20%),
+                    radial-gradient(circle at bottom left, black(.3) 10%, transparent 40%),
+                    radial-gradient(circle at 7% 0, black(.3) 3%, transparent 10%),
+                    radial-gradient(circle at 85% 80%, black(.3) 10%, transparent 20%),
+                    linear-gradient(to right, transparent 15%, black(.17) 20%, transparent 25%),
+                    linear-gradient(75deg, transparent 40%, black(.2) 50%, transparent 60%),
+                    linear-gradient(to bottom, transparent calc(var(--gap) - .1em),
+                                               black(.25)  calc(var(--gap) - .1em),
+                                               black(.25)  calc(var(--gap) + .2em),
+                                               transparent calc(var(--gap) + .5em)),
+                    linear-gradient(to top, transparent var(--gap),
+                                            black(.25) var(--gap),
+                                            black(.25) calc(var(--gap) + .2em),
+                                            transparent calc(var(--gap) + .4em)),
+                    repeating-linear-gradient(to bottom, transparent, transparent .2em,
+                                                                      black(.11) .3em,
+                                                                      transparent .5em),
+                    linear-gradient(130deg, sienna, saddlebrown)
+  border-radius: .2em
+  box-shadow: 3.2em 3.2em 8em 3.2em black(.6),
+              12.8em 12.8em 9.6em black(.4)
+  
+  div
+    &:before,
+    &:after
+      content: ''
+      position: absolute
+  
+  > div
+    background-color: darken(darkolivegreen,19)
+    background-repeat: no-repeat
+    position: relative
+    
+    & > div
+      position: absolute
+      
+    &:nth-of-type(-n + 3):after,
+    &:nth-of-type(5):after,
+    &:nth-of-type(6):after,
+    &:nth-of-type(7):after
+      width: 100%
+      height: var(--gap)
+      bottom: calc(var(--gap) * -1)
+      background-image: linear-gradient(to right, black(.25) .2em, black(0) .4em),
+                        linear-gradient( to left, black(.25) .2em, black(0) .4em)
+    
+    &:nth-of-type(1)
+      background-image: linear-gradient(35deg, darken(saddlebrown,27) 20%,
+                                               darken(saddlebrown,21) 60%,
+                                               darken(saddlebrown,16) 100%),
+                        linear-gradient(to right, black(.7) 30%, transparent 60%),
+                        linear-gradient(to top, black(.6) 30%, transparent 60%),
+                        $wallpaper-pattern
+      background-size: 100% 1.9em, 100% 100%, 100% 100%, 100% 100%
+      // keychains
+      &:before
+        width: 6em
+        height: 4em
+        left: .6em
+        top: calc(var(--gap) * -1)
+        background-repeat: repeat-x, repeat-x, repeat-x, repeat-x,
+                           no-repeat, no-repeat, no-repeat
+        background-image: radial-gradient(circle at center, #aaa 15%, white(0) 16%),
+                          radial-gradient(circle, black(.4) 20%, black(0) 26%),
+                          linear-gradient(to right, white(0) 45%, #ccc 46%, #555 54%, white(0) 55%),
+                          radial-gradient(circle at center, white(0) 34%, #aaa 35%, #aaa 44%, white(0) 45%),
+                          radial-gradient(circle at center .4em, transparent .2em, firebrick .3em, 
+                                                                                   darkred 68%, transparent 71%),
+                          radial-gradient(circle at center .4em, transparent .2em, teal .3em,  
+                                                                                   steelblue 68%, transparent 71%),
+                          radial-gradient(circle at center .4em, transparent .2em, coral .3em,  
+                                                                                   firebrick 68%, transparent 71%)
+        background-size: 2em 1em, 2em 1em, 2em .6em, 2em 1em,
+                         1.4em 1.4em, 1.4em 1.4em, 1.4em 1.4em
+        background-position: 0 .1em, .1em .3em, 0 1.2em, 0 .5em,
+                             .3em 1.5em, 2.3em 1.5em, 4.3em 1.5em
+    
+      .mirror
+        width: 50%
+        height: calc(100% - 2.3em)
+        left: .3em
+        bottom: 0
+        background-color: #777
+        background-image: linear-gradient(55deg, white(0) 50%, white(.15) 60%, white(0) 70%),
+                          linear-gradient(to right, darken(saddlebrown,8) 12%, transparent 12%)
+        border-radius: 50%
+        box-shadow: 1.6em 0 .8em -.4em black(.9)
+        overflow: hidden
+        &:before
+          width: 5.6em
+          height: 4.8em
+          right: -1.6em
+          bottom: -1em
+          background-color: alpha(wheat,.6)
+          border-radius: 3.2em 3.2em .8em .8em /  2.4em 2.4em 2em 2em
+          box-shadow: inset .3em 0 .5em black(.4),
+                      inset .8em 0 1em black(.4)
+        &:after
+          box-sizing: border-box
+          width: 100%
+          height: 100%
+          background-image: linear-gradient(to right, black(.4) 15%, black(0) 60%)
+          border-radius: 50%
+          box-shadow: inset 0 0 0 .2em alpha(sienna,.6)
+
+      .bottle-amber
+        width: 3.2em
+        height: 60%
+        right: .5em
+        bottom: 0
+        background-color: sienna
+        background-repeat: no-repeat
+        background-image: linear-gradient(to right, #bbb, #ccc),
+                          linear-gradient(to top, white(0) 10%, white(.4) 20%, white(.4) 80%, white(0) 90%),
+                          linear-gradient(to bottom, black(.6), black(0) 15%),
+                          linear-gradient(to top, black(.4) 60%, black(0) 80%),
+                          linear-gradient(to top, black(.5) .5em, black(0) 1em)
+        background-size: 50% 30%, 10% 80%, 100% 100%, 100% 100%, 100% 100%
+        background-position: 0 50%, 15% 60%, 0 0, 0 0, 0 0 
+        border-radius: 3.2em 3.2em 0 0
+        box-shadow: inset -.5em 0 .3em black(.5),
+                    inset  .5em 0 .3em black(.5)
+        &:before
+          width: 40%
+          height: 1.3em
+          left: 30%
+          top: -1em
+          background-repeat: no-repeat
+          background-image: linear-gradient(to right, black(.4) 15%, black(0) 30%, black(0) 70%, black(.4) 85%),
+                            linear-gradient(sienna, sienna),
+                            linear-gradient(to right, black(.4) 15%, black(0) 30%, black(0) 70%, black(.4) 85%),
+                            linear-gradient(darken(sienna,6), darken(sienna,6)),
+                            linear-gradient(to right, darken(tan,30) 15%, tan 30%, tan 70%, darken(tan,30) 85%)
+          background-size: 100% 35%, 100% 35%, 70% 80%, 70% 80%, 60% 50%
+          background-position: center 30%, center 30%, center bottom, center bottom, center top
+
+      .skull
+        width: 5.6em
+        height: 5em
+        bottom: 0
+        left: 40%
+        background-color: lighten(wheat,5)
+        background-repeat: no-repeat
+        background-image: radial-gradient(ellipse at left bottom, black(.4) 10%, black(.6) 50%, black(0) 55%),
+                          radial-gradient(ellipse at right bottom, black(.55) 10%, black(.7) 50%, black(0) 55%),
+                          linear-gradient(to right, black(.2) 45%, black(0) 65%),
+                          radial-gradient(ellipse at left top, black(.4) 40%, black(0) 55%),
+                          radial-gradient(ellipse at right top, black(.2) 40%, black(0) 55%),
+                          repeating-linear-gradient(to right, black(.07), black(.07) 10%,
+                                                              black(.4) 11%, black(.4) 13%)
+        background-size: 35% 23%, 35% 23%,
+                         100% 100%,
+                         25% 120%,
+                         25% 120%,
+                         50% 6%
+        background-position: left 101%, right 101%,
+                             0 0,
+                             left center,
+                             right center,
+                             center 101%
+        border-radius: 3.2em 3.2em .8em .8em /  2.4em 2.4em 2.1em 2.1em
+        box-shadow: inset 1.1em 0 .6em black(.5),
+                    inset -.6em 0 .5em black(.2),
+                    1.3em .2em .5em -.3em black(.3)
+        &:before
+          width: 30%
+          height: 30%
+          left: 15%
+          top: 40%
+          background-color: #222
+          border-radius: .8em
+          box-shadow: inset .3em -.3em 0 black,
+                      -.2em .2em .2em .2em white(.3),
+                      -.3em -.3em .2em .2em black(.15),
+                      2em -.2em 0 -.2em #222,
+                      2.2em 0 0 black,
+                      2.4em .2em .2em .2em white(.4),
+                      2.6em -.3em .2em .2em black(.1),
+                      1.9em .5em .5em .3em black(.35)
+        &:after
+          width: 14%
+          height: 22%
+          left: 43%
+          top: 65%
+          background-color: #222
+          background-image: linear-gradient(to right, white(0) 40%, white(.4) 50%, white(0) 60%)
+          border-radius: 50% 50% 50% 50% / 60% 60% 20% 20%
+          box-shadow: inset 0 -.3em .2em black(.5)
+      
+    &:nth-of-type(2)
+      grid-column: 2/4
+      background-image: linear-gradient(35deg, darken(saddlebrown,27) 15%,
+                                               darken(saddlebrown,21) 50%,
+                                               darken(saddlebrown,16) 100%),
+                        linear-gradient(to right, black(.7) 20%, transparent 35%),
+                        linear-gradient(to top, black(.6) 30%, transparent 60%),
+                        $wallpaper-pattern
+      background-size: 100% 1.9em, 100% 100%, 100% 100%, 100% 100%
+      // shelf label
+      &:before
+        box-sizing: border-box
+        width: 3em
+        height: 1.1em
+        left: calc(50% - 1.5em)
+        top: -1em
+        background-color: #d5d5d5
+        border: .2em solid
+        border-image: linear-gradient(to right, $gold-d 10%, $gold-l 10%,
+                                                $gold-m 60%, $gold-d 60%, 
+                                                $gold-d 80%, $gold-m 80%) 1 1
+        box-shadow: 0 0 .2em black(.1),
+                    .1em .1em .1em black(.2),
+                    inset .2em .2em .1em black(.7)
+      
+      .abacus
+        box-sizing: border-box
+        width: 14.4em
+        height: 70%
+        max-height: 8em
+        left: .6em
+        bottom: 0
+        background-repeat: no-repeat, no-repeat, space
+        background-image: linear-gradient(to right, black(.35) 40%, black(.1)),
+                          linear-gradient(to right, darken(saddlebrown,3), darken(saddlebrown,7)),
+                          linear-gradient(to right, transparent, transparent .7em,
+                                                                 tan .7em,
+                                                                 darken(tan,34) .9em,
+                                                                 transparent .59em,
+                                                                 transparent 1.6em)
+        background-size: 100% 100%,
+                         100% .5em,
+                         1.6em 100%
+        background-position: 0 0,
+                             0 35%,
+                             0 0
+        border: .5em solid
+        border-image: linear-gradient(to right, darken(saddlebrown,12), darken(saddlebrown,5)) 1 1
+        border-bottom-width: .3em
+        box-shadow: .8em 0 .8em -.5em black(.5)
+        &:before,
+        &:after
+          width: 100%
+          background-image: linear-gradient(to right, black(.4) 40%, black(.05)),
+                            radial-gradient(ellipse at 30% 30%, white(.5) 12%, transparent 20%),
+                            linear-gradient(to bottom, transparent 40%, black(.5) 50%),
+                            radial-gradient(ellipse, chocolate 55%, transparent 65%)
+          background-size: 100% 100%, 1.6em .6em, 1.6em .6em, 1.6em .6em
+          background-repeat: space repeat
+        &:before
+          height: 1.1em
+          top: calc(35% - 1.4em)
+        &:after
+          height: 2.7em
+          bottom: 0
+          
+      .clock
+        width: 7.1em
+        height: 3.1em
+        left: 2em
+        bottom: .4em
+        background-color: #333
+        background-repeat: no-repeat
+        background-image: linear-gradient(to top, #222 40%, black 60%),
+                          linear-gradient(to top, #222 40%, black 60%)
+        background-size: 25% 45%
+        background-position: 32% 50%, 68% 50%
+        border-radius: 2em
+        box-shadow: inset .2em .2em .3em black(.2),
+                    inset -.3em -.3em .3em black(.4),
+                    inset 0 0 0 .5em goldenrod,
+                    inset -.1em -.1em .1em .5em black(.8),
+                    inset -.2em -.2em .2em .5em white(.8),
+                    .6em 0 .5em black(.4)
+        &:before
+          width: 50%
+          height: 40%
+          left: 29%
+          top: 38%
+          content: '12'
+          color: #bbb
+          font-family: 'Courier New', serif
+          font-size: .8em
+          font-weight: bold
+          line-height: 1.3
+          text-shadow: 2.2em 0 0
+          letter-spacing: .2em
+        &:after
+          width: 60%
+          height: .4em
+          left: 20%
+          bottom: -.4em
+          background-color: darken(goldenrod,15)
+          box-shadow: .6em 0 .2em -.2em black(.4)
+          
+      .rubiks-cube
+        width: 4em
+        height: 3.4em
+        right: 43%
+        bottom: 0
+        background-repeat: no-repeat
+        background-image: linear-gradient(to top, black(.2) 0, black(0) 50%),
+                          linear-gradient(to right, black(.3) 0, black(0) 50%),
+                          linear-gradient(to left, black(.2) 0, black(0) 50%),
+                          linear-gradient(to top, #111, #444 5%, transparent 5%),
+                          linear-gradient(#111, #111),
+                          linear-gradient(#111, #111),
+                          linear-gradient( 166deg, transparent 21%, #444 21.5%,
+                                                   #444 22%, #111 23%, #111 25%, transparent 25.5%),
+                          linear-gradient( 171deg, transparent 45%, #555 45.5%,
+                                                   #555 46%, #111 47%, #111 49%, transparent 49.5%),
+                          linear-gradient( 175deg, transparent 69.5%, #555 70%,
+                                                   #555 71%, #111 72%, #111 74%, transparent 74.5%),
+                          linear-gradient(#111, #111),
+                          linear-gradient(#111, #111),
+                          linear-gradient(-166deg, transparent 21%, #333 21.5%,
+                                                   #333 22%, #111 23%, #111 25%, transparent 25.5%),
+                          linear-gradient(-171deg, transparent 44.5%, #555 45%,
+                                                   #555 46%, #111 47%, #111 49%, transparent 49.5%),
+                          linear-gradient(-175deg, transparent 69%, #555 69.5%,
+                                                   #555 71%, #111 72%, #111 74%, transparent 74.5%),
+                          linear-gradient(to right, #111 50%, #333 50%),
+                          linear-gradient( 166deg, transparent 25%, lighten(firebrick,10) 25%),
+                          linear-gradient(-166deg, transparent 25%, darken(steelblue,5) 25%)
+        background-size: 100% 100%, 50% 79%, 50% 79%, 100% 100%,
+                         4% 80%, 4% 90%,
+                         50% 100%, 50% 100%, 50% 100%,
+                         4% 80%, 4% 90%,
+                         50% 100%, 50% 100%, 50% 100%,
+                         6% 90%, 50% 100%, 50% 100%
+        background-position: left bottom, left bottom, right bottom, left bottom,
+                             12% 100%, 30% 100%, 
+                             left bottom, left bottom, left bottom,
+                             88% 100%, 70% 100%, 
+                             right bottom, right bottom, right bottom,
+                             50% bottom, left bottom, right bottom
+    
+      .snowglobe
+        width: 6.4em
+        height: @width
+        right: 22.5%
+        bottom: .5em
+        background-color: white(.25)
+        background-repeat: no-repeat
+        background-image: radial-gradient(ellipse at 25% 10%, white(.7) 5%, white(0) 30%),
+                          radial-gradient(ellipse at 50% 8%, white(.9) 2%, white(0) 8%),
+                          radial-gradient(circle at 40% 78%, #333 2%, black(0) 3%),
+                          radial-gradient(circle at 50% 82%, #333 2%, black(0) 3%),
+                          radial-gradient(ellipse at 50% 100%, #ddd 20%, white(0) 22%),
+                          linear-gradient(-120deg, transparent 40%, darkorange 42%)
+        background-size: 100% 100%, 300% 100%, 100% 100%, 100% 100%, 220% 100%, 8% 25%
+        background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%, 50% 50%, 30% 80%
+        border-radius: 50%
+        box-shadow: inset .2em 0 .3em white(.7),
+                    inset -.2em 0 .3em white(.2),
+                    inset 0 0 .8em .6em black(.6)
+        &:before
+          width: 4.8em
+          height: 1.1em
+          right: calc(50% - 2.4em)
+          bottom: -.5em
+          background-color: $gold-l
+          background-image: linear-gradient(to right, black(.6) 10%, transparent 60%, black(.6) 85%)
+        &:after
+          width: 2em
+          height: 1.6em
+          right: 27%
+          bottom: 1.8em
+          background-repeat: no-repeat
+          background-image: linear-gradient(to right, #333, #222),
+                            linear-gradient(to right, $gold-l, $gold-m),
+                            linear-gradient(to right, #333, #222)
+          background-size: 100% 20%, 60% 40%, 60% 100%
+          background-position: center bottom
+          transform: rotate(9deg)
+          
+      .books
+        width: 11%
+        height: 70%
+        right: 0
+        bottom: 0
+        background-color: black
+        background-repeat: space
+        background-image: linear-gradient(to right, white(.2), white(0) 25%),
+                          linear-gradient(to left,  black(.3), black(0) 30%),
+                          linear-gradient(to bottom, darken(#CD5C5C,10) 20%,
+                                                     transparent 20%, transparent 22%, 
+                                                     darken(#CD5C5C,22) 22%, darken(#CD5C5C,25) 30%, 
+                                                     transparent 30%, transparent 33%, 
+                                                     darken(#CD5C5C,10) 33%, darken(#CD5C5C,15) 50%),
+                          linear-gradient(to right, $gold-d 10%,$gold-l 10%,
+                                                    $gold-m 30%, $gold-d 40%, 
+                                                    $gold-d 80%, $gold-l 80%)
+        background-size: 32.5% 100%
+        &:before
+          width: 10%
+          height: 60%
+          right: .5em
+          top: -1em
+          background-image: linear-gradient(140deg, darken(darkred,2) 90%, transparent 92%)
+        &:after
+          width: 110%
+          height: 88%
+          left: -(@width)
+          bottom: 0
+          background-color: black
+          background-repeat: space
+          background-image: linear-gradient(to right, white(.2), white(0) 25%),
+                            linear-gradient(to left,  black(.3), black(0) 30%),
+                            linear-gradient(to right, darken(green,8) 25%, transparent 25%),
+                            linear-gradient(to left,  darken(green,8) 25%, transparent 25%),
+                            repeating-linear-gradient(to bottom, darken(green,8), darken(green,8) 13%,
+                                                                 transparent 13%, transparent 15%),
+                            linear-gradient(to right, $gold-l 50%, $gold-m 50%)
+          background-size: 24% 100%
+          
+    &:nth-of-type(3)
+      background-image: linear-gradient(to top, darken(saddlebrown,25) 15%, transparent 80%),
+                        linear-gradient(135deg, transparent 1.3em, darken(saddlebrown,11) 1.3em),
+                        linear-gradient(35deg, darken(saddlebrown,27) 30%,
+                                               darken(saddlebrown,21) 80%,
+                                               darken(saddlebrown,16) 100%),
+                        linear-gradient(to right, black(.6) 40%, transparent 80%),
+                        linear-gradient(to top, black(.6) 30%, transparent 60%),
+                        $wallpaper-pattern
+      background-size: 1.9em 100%, 1.9em 100%, 100% 1.9em, 100% 100%, 100% 100%, 100% 100%
+      background-position: 100.3% 0, 100.3% 0, top right, top right, top right, top right
+      z-index: 1
+      
+      .eyeball-jar
+        width: 4.8em
+        height: 75%
+        left: .5em
+        bottom: 0
+        background-repeat: no-repeat
+        background-image: linear-gradient(to right, black(.2), black(.2)),
+                          linear-gradient(to right, transparent, black(.6) 30%, black(.6) 70%, transparent 100%),
+                          linear-gradient(to right, transparent, white(.4) 30%, white(.4) 70%, transparent 100%),
+                          linear-gradient(to right, transparent, black(.6) 30%, black(.6) 70%, transparent 100%),
+                          linear-gradient(to top, white(.3) .5em,
+                                                  alpha(aqua,.5) .5em, alpha(aqua,.4) 70%, 
+                                                  white(.16) 70%, white(.16) 97%,
+                                                  white(.2) 97.2%),
+                          linear-gradient(to right, white(0), white(.2) 30%, white(.2) 70%, white(0) 100%),
+                          linear-gradient(to right, darken(peru,28), peru, darken(peru,24))
+                          
+        background-size: 100% 100%,
+                         20% .5em,
+                         40% .3em,
+                         20% .5em,
+                         100% 100%,
+                         30% 100%,
+                         90% .5em
+        background-position: 0 0,
+                             5% 100%,
+                             40% 97%,
+                             95% 100%,
+                             0 100%,
+                             25% 100%,
+                             50% 0
+        box-shadow: inset .3em 0 .2em black(.6),
+                    inset .8em 0 .2em black(.2),
+                    inset -.3em 0 .2em black(.6),
+                    inset -.8em 0 .2em black(.2)
+        &:before
+          width: 2.9em
+          height: @width
+          left: .8em
+          top: 25%
+          z-index: -1
+          background-color: #ddd
+          background-image: radial-gradient(circle at 45% 30%, black 10%, brown 11%, darkgreen 20%,
+                                                               darken(saddlebrown,20) 30%, transparent 32%)
+          border-radius: 50%
+          box-shadow: inset -.8em -.8em .8em black(.9)
+        &:after
+          width: 100%
+          height: .6em
+          top: -(@height)
+          background-image: linear-gradient(to right, black(.3), black(.3)),
+                            linear-gradient(to right, darken(peru,28), peru 45%, peru 55%, darken(peru,24))
+          border-radius: .2em
+      
+      .pressed-leaf
+        box-sizing: border-box
+        width: 38%
+        height: 70%
+        right: 2.4em
+        bottom: 0
+        background-repeat: no-repeat
+        background-image: linear-gradient(55deg, white(0) 80%, white(.1) 85%, white(.1) 90%, white(0) 95%),
+                          linear-gradient(white(.1), white(.1)),
+                          linear-gradient(to bottom, darken(forestgreen,10), darken(forestgreen,20))
+        background-size: 100% 100%, 100% 100%, .1em 80%
+        background-position: center center
+        border: .5em solid
+        border-image: linear-gradient(to right, darken(peru,32), darken(peru,21)) 1 1
+        border-bottom: none
+        box-shadow: inset .2em .2em .3em black(.2),
+                    1em 0 .5em -.2em black(.4)
+        overflow: hidden
+        &:before,
+        &:after
+          width: .6em
+          height: .3em
+          top: 10%
+        &:before
+          left: calc(50% - .8em)
+          background-color: darken(forestgreen,10)
+          border-radius: 0 90% 0 90%
+          box-shadow: -.1em   .6em 0 .1em darken(forestgreen,11),
+                      -.2em  1.3em 0 .2em darken(forestgreen,10),
+                      -.3em  2.2em 0 .3em darken(forestgreen,14),
+                      -.4em  3.2em 0 .4em darken(forestgreen,15),
+                      -.5em  4.5em 0 .5em darken(forestgreen,19)
+        &:after
+          left: 50%
+          background-color: darken(forestgreen,10)
+          border-radius: 90% 0 90% 0
+          box-shadow: .1em   .6em 0 .1em darken(forestgreen,11),
+                      .2em  1.3em 0 .2em darken(forestgreen,13),
+                      .3em  2.2em 0 .3em darken(forestgreen,15),
+                      .4em  3.2em 0 .4em darken(forestgreen,17),
+                      .5em  4.5em 0 .5em darken(forestgreen,20)
+          
+      .egg-jar
+        width: 2.9em
+        height: 55%
+        left: 4.3em
+        bottom: 0
+        background-repeat: no-repeat
+        background-image: linear-gradient(to right, transparent, black(.6) 30%, black(.6) 70%, transparent 100%),
+                          linear-gradient(to right, transparent, white(.4) 30%, white(.4) 70%, transparent 100%),
+                          linear-gradient(to right, transparent, black(.6) 30%, black(.6) 70%, transparent 100%),
+                          linear-gradient(to top, white(.3) .8em,
+                                                  alpha(lime,.45) .8em, alpha(lime,.4) 70%, 
+                                                  white(.2) 70%),
+                          linear-gradient(to right, white(0), white(.3) 30%, white(.3) 70%, white(0) 100%),
+                          linear-gradient(to right, darken(peru,28), peru, darken(peru,23))
+                          
+        background-size: 20% .8em,
+                         40% .3em,
+                         20% .8em,
+                         100% 100%,
+                         30% 100%,
+                         90% .5em
+        background-position: 5% 100%,
+                             40% 96%,
+                             95% 100%,
+                             0 100%,
+                             25% 100%,
+                             50% 0
+        box-shadow: inset .3em 0 .2em black(.6),
+                    inset .8em 0 .2em black(.2),
+                    inset -.3em 0 .2em black(.6),
+                    inset -.8em 0 .2em black(.2)
+        &:before
+          width: .6em
+          height: @width
+          left: .3em
+          bottom: 1em
+          background-color: white(.35)
+          border-radius: 50%
+          z-index: -1
+          box-shadow:  .8em 0 0 white(.2),
+                      1.5em 0 0 white(.3),
+                       .5em -.8em 0 white(.2),
+                      1.3em -1.6em 0 white(.2)
+        &:after
+          width: 100%
+          height: .6em
+          top: -(@height)
+          background-image: linear-gradient(to right, darken(peru,25), peru 45%, peru 55%, darken(peru,20))
+          border-radius: .2em
+ 
+      .bowls
+        width: 2.6em
+        height: .3em
+        right: 2.7em
+        bottom: 0
+        background-color: grey
+        background-repeat: no-repeat
+        background-image: linear-gradient(to right, white(0), white(.3) 40%, white(.3) 50%, white(0)),
+                          linear-gradient(to right, black(0), black(.6) 40%, black(.6) 60%, black(0)),
+                          linear-gradient(to right, white(0), white(.3) 40%, white(.3) 50%, white(0))
+        background-size: 30% 100%
+        background-position: 10% 0, 50% 0, 90% 0
+        border-radius: .2em
+        &:before,
+        &:after
+          width: 5.6em
+          height: 2.6em
+          background-color: lighten(grey,25)
+          background-repeat: no-repeat
+          background-image: linear-gradient(to top, black(.6) 10%, transparent 15%),
+                            radial-gradient(ellipse at top center, black(.6) 10%, transparent 20%),
+                            radial-gradient(circle at top center, white(.6) 10%, white(0) 20%),
+                            radial-gradient(circle at top center, white(.7) 8%, white(0) 18%),
+                            linear-gradient(to right, transparent 20%,
+                                                      black(.28) 40%, black(.28) 60%,
+                                                      transparent 90%)
+          background-size: 100% 100%, 100% 50%, 40% 100%, 40% 100%, 100% 100%
+          background-position: 0 0, 0 0, 0 0, 110% 0, 0 0
+          border-radius: .3em .3em 2.4em 2.4em
+          box-shadow: inset -.5em 0 1em black(.8),
+                      inset 0 -.5em .6em black(.4),
+                      0 -.2em .6em black(.4),
+                      -.8em 0 .8em black(.2)
+        &:before
+          bottom: 1.5em
+          right: -1.3em
+          transform: rotate(8deg)
+        &:after
+          bottom: .3em
+          right: -1.4em
+        
+    &:nth-of-type(4)
+      grid-row: 2/5
+      background-image: linear-gradient(155deg, darken(saddlebrown,28) 2.2em,
+                                                darken(saddlebrown,26) 3.2em,
+                                                darken(saddlebrown,12) 100%),
+                        linear-gradient(to right, black(.7) 30%, transparent 60%),
+                        linear-gradient(to bottom, black(.35), transparent 20%),
+                        $wallpaper-pattern
+      background-size: 100% 2.4em, 100% 100%, 100% 100%, 100% 100%
+      background-position: 0 100.3%, top left, top left, top left
+      // plaque
+      &:before
+        box-sizing: border-box
+        content: 'FISHER'
+        width: 5.7em
+        height: 2em
+        padding-top: .6em
+        bottom: 6.5em
+        left: 5.3em
+        background-color: $gold-m
+        background-image: radial-gradient(circle at 10% 53%, black(.4) 3%, transparent 4%),
+                          radial-gradient(circle at 90% 53%, black(.4) 3%, transparent 4%)
+        border-radius: .2em
+        box-shadow: inset 2em 0 1em black(.3),
+                    inset 0 0 0 .2em $gold-m,
+                    inset .3em .3em .2em black(.4),
+                    inset -.2em -.2em .2em black(.4),
+                    .2em .2em .2em black(.3)
+        color: black(.5)
+        font-family: 'Courier New', serif
+        font-weight: bold
+        text-align: center
+        opacity: .8
+      // balloon string
+      &:after
+        width: .1em
+        height: calc(100% - 15.4em)
+        left: 3.5em
+        background-image: linear-gradient(to bottom, white(0) .1em, white(.3).8em)
+      
+      .flag
+        width: 12.8em
+        height: 7.2em
+        left: calc(50% - 6.4em)
+        top: 10%
+        background-color: midnightblue
+        background-image: linear-gradient(to right, black(.6) 40%, black(.4) 100%)
+        box-shadow: .2em .2em .8em black(.5)
+        &:before
+          width: 100%
+          height: 50%
+          background-color: firebrick
+          background-image: linear-gradient(to right, black(.7) 40%, black(.4) 100%),
+                            linear-gradient(167deg,transparent 80%, firebrick 81%),
+                            linear-gradient(154deg,transparent 70%, gold 71%),
+                            linear-gradient(135deg,transparent 63%, firebrick 61%),
+                            linear-gradient(122deg,transparent 59%, gold 60%),
+                            linear-gradient(109deg,transparent 55%, firebrick 56%),
+                            linear-gradient( 98deg,transparent 52%, gold 53%),
+                            linear-gradient( 82deg,transparent 48%, firebrick 48%),
+                            linear-gradient( 70deg,transparent 45%, gold 46%),
+                            linear-gradient( 57deg,transparent 41%, firebrick 42%),
+                            linear-gradient( 45deg,transparent 37%, gold 38%),
+                            linear-gradient( 27deg,transparent 30%, firebrick 31%),
+                            linear-gradient( 14deg,transparent 21%, gold 22%)
+
+        &:after
+          width: 100%
+          height: 100%
+          background-repeat: no-repeat
+          background-image: radial-gradient(circle, #333 25%, transparent 30%),
+                            radial-gradient(circle, #555 25%, transparent 30%)
+          background-size: .2em .2em
+          background-position: left top, right top
+          content: '\2605'
+          color: darken(darkorange,36)
+          font-size: 3.8em
+          text-align: center
+          line-height: 2
+          
+      .balloon
+        width: 1.4em
+        height: 1.2em
+        left: 2.9em
+        bottom: 7.5em
+        background-color: lighten(sienna,7)
+        background-image: linear-gradient(to bottom, black(0), black(.3))
+        background-size: 100% 20%
+        border-radius: .1em .1em .3em .3em
+        box-shadow: inset -.2em -.2em .2em black(.5)
+        &:before
+          width: 5em
+          height: @width
+          left: -1.8em
+          top: -6.7em
+          background-image: linear-gradient(135deg, firebrick 50%, #d5d5d5 50%)
+          border-radius: 5em 5em 5em 0
+          box-shadow: inset .5em 0 .3em black(.3),
+                      inset -.5em -.9em .5em black(.5),
+                      inset .5em .8em 0 -.5em firebrick,
+                      inset 2em 2.5em 0 -2em #d5d5d5,
+                      inset -.8em -.5em 0 -.5em #d5d5d5,
+                      inset -2.7em -2em 0 -2em firebrick
+          transform: rotate(-45deg)
+        &:after
+          width: 5em
+          height: 11em
+          left: -1.8em
+          bottom: 1.2em 
+          background-repeat: no-repeat
+          background-image: radial-gradient(ellipse at center top, transparent 30%,
+                                                                   cadetblue 35%, darken(cadetblue,12) 65%,
+                                                                   transparent 70%),
+                            radial-gradient(ellipse at center top, transparent 30%,
+                                                                   darken(cadetblue,8) 35%,
+                                                                   darken(cadetblue,18) 65%,
+                                                                   transparent 70%),
+                            radial-gradient(ellipse at center top, transparent 30%,
+                                                                   darken(cadetblue,4) 35%,
+                                                                   darken(cadetblue,14) 65%,
+                                                                   transparent 70%),
+                            radial-gradient(ellipse at center top, transparent 30%,
+                                                                   cadetblue 35%, darken(cadetblue,13) 65%,
+                                                                   transparent 70%),
+                            radial-gradient(ellipse at center top, transparent 30%,
+                                                                   darken(cadetblue,8) 35%,
+                                                                   darken(cadetblue,18) 65%,
+                                                                   transparent 70%),
+                            radial-gradient(ellipse at center top, transparent 30%,
+                                                                   darken(cadetblue,10) 35%,
+                                                                   darken(cadetblue,20) 65%,
+                                                                   transparent 70%),
+                            linear-gradient(to top, black(.4) 20%, black(0) 25%),
+                            linear-gradient(to right, $gold-l,
+                                                      $gold-m 60%, $gold-d 60%, 
+                                                      $gold-d 80%, $gold-m 80%, $gold-l 90%),
+                            repeating-linear-gradient(to right, $gold-l,
+                                                                $gold-l 5%, $gold-m 5%, $gold-m 8%, 
+                                                                transparent 8%, transparent 15%),
+                            linear-gradient( 68deg, transparent 42%, $gold-l 44%, $gold-m 46%, transparent 48%),
+                            linear-gradient( 75deg, transparent 42%, $gold-l 44%, $gold-m 46%, transparent 48%),
+                            linear-gradient(-75deg, transparent 42%, $gold-l 44%, $gold-m 46%, transparent 48%),
+                            linear-gradient(-68deg, transparent 42%, $gold-l 44%, $gold-m 46%, transparent 48%),
+                            linear-gradient(to top, black(.4) 15%, black(0) 20%)
+          background-size: 30% .8em, 10% .7em, 20% .8em, 
+                           30% .9em, 20% .8em, 10% .7em,
+                           65% .4em, 65% .4em, 65% .4em,
+                           50% 4.2em, 50% 4.2em, 50% 4.2em, 50% 4.2em,
+                           100% 11em
+          background-position: left 30% bottom 3.6em, left 0 bottom 3.8em, left 10% bottom 3.7em,  
+                               left 65% bottom 3.6em, left 90% bottom 3.7em, right bottom 3.8em,
+                               left 50% bottom 1.4em, center bottom 1.4em, center bottom 1em,
+                               0 100%, 25% 100%, 75% 100%, 100% 100%,
+                               0 0
+                               
+      .cardbox
+        width: 10em
+        height: 5em
+        left: .7em
+        bottom: .5em
+        background-repeat: no-repeat
+        background-image: linear-gradient(to right, transparent, black(.8), transparent),
+                          linear-gradient(to bottom, transparent, black(.3), transparent),
+                          linear-gradient(to right, darken(olive,7) 10%, olive 90%),
+                          linear-gradient(125deg, alpha(olive,0) 20%,
+                                                  darken(olive,12) 21%,
+                                                  darken(olive,12) 79%,
+                                                  alpha(olive,0) 80%),
+                          linear-gradient(to bottom, black(.3), transparent 50%),
+                          linear-gradient(145deg, transparent 59%, 
+                                                  black(.3) 60%, 
+                                                  black(.3) 61%, 
+                                                  transparent 62%),
+                          linear-gradient(155deg, alpha(olive,0) 21%,
+                                                  darken(olive,7) 22%, 
+                                                  darken(olive,7) 74%, 
+                                                  alpha(olive,0) 75%),
+                          linear-gradient(darken(olive,7), darken(olive,7))
+        background-size: 3% 75%, 85% 3%, 85% 75%,
+                         10% 100%,
+                         96% 25%, 83% 25%, 83% 25%, 40% 25%
+        background-position: 43% 100%, 0 40%, 0 100%,
+                             94% 0,
+                             0 0, 0 0, 0 0, 90% 0
+        &:before,
+        &:after
+          box-sizing: border-box
+          width: 2em
+          height: 1em
+          bottom: .9em
+          background-color: #d5d5d5
+          border: .2em solid
+          border-image: linear-gradient(to right, $gold-d 10%, $gold-l 10%,
+                                                  $gold-m 60%, $gold-d 60%, 
+                                                  $gold-d 80%, $gold-m 80%) 1 1
+          box-shadow: 0 0 .2em black(.1),
+                      .1em .1em .1em black(.2),
+                      inset .2em .2em .1em black(.7)
+        &:before
+          left: 11%
+        &:after
+          left: 54%
+        
+      .feathers
+        width: .8em
+        height: 60%
+        left: 12.1em
+        bottom: 10%
+        background-color: #222
+        background-repeat: no-repeat, no-repeat, repeat-y
+        background-image: linear-gradient(to top, black(.5) 40%, black(0) 60%),
+                          repeating-linear-gradient(30deg, transparent,
+                                                           transparent 1%, peru 2%, peru 3%, transparent 4%),
+                          radial-gradient(ellipse at center right, chocolate 30%, transparent 70%)
+        background-size: 100% 100%, 50% 100%, 50% 5%
+        background-position: 0 0, 0 0, 100% 0
+        border-top-left-radius: .5em 14.4em
+        border-top-right-radius: .5em 6.4em
+        transform: rotate(-10deg)
+        &:before
+          width: .8em
+          height: 100%
+          right: -2.1em
+          bottom: 0
+          background-color: darken(peru,15)
+          background-repeat: no-repeat, repeat-y, no-repeat, no-repeat
+          background-image: linear-gradient(to top, black(.5) 40%, black(0) 60%),
+                            radial-gradient(ellipse at center right, sienna 40%, transparent 60%),
+                            linear-gradient(to right, transparent, white(.6) 50%, transparent 100%),
+                            repeating-linear-gradient(to bottom, transparent, transparent 0,
+                                                                 white(.4) 4%, black(.5) 4.5%,
+                                                                 black(.5) 7%, white(.5) 7.5%, white(0) 11%)
+          background-size: 100% 100%, 50% 10%, 15% 100%, 100% 100% 
+          background-position: 0 0, 100% 0, 50% 0, 0 0
+          border-top-left-radius: .5em 14.4em
+          border-top-right-radius: .5em 6.4em
+          transform: rotate(18deg)
+        &:after
+          width: .8em
+          height: 115%
+          right: -1.1em
+          bottom: 0
+          background-repeat: no-repeat
+          background-image: repeating-linear-gradient(to bottom, transparent, transparent 0,
+                                                                 white(.4) 4%, black(.5) 4.5%,
+                                                                 black(.5) 7%, white(.5) 7.5%, white(0) 11%),
+                            repeating-linear-gradient(-30deg, transparent,
+                                                              transparent 1%, sienna 2%, sienna 3%, transparent 4%),
+                            linear-gradient(to right, darken(peru,15) 50%, #222 50%)
+          background-size: 50% 100%, 50% 100%, 100% 100%
+          background-position: 0 0, 100% 0, 0 0
+          border-top-left-radius: .5em 6.4em
+          border-top-right-radius: .5em 14.4em
+          transform: rotate(6deg)
+      
+      .planter
+        width: 3.2em
+        height: 1.1em
+        right: 1.9em
+        bottom: 1em
+        background-color: lighten(lightslategrey,10)
+        background-image: linear-gradient(to bottom, black(.3) 30%, black(0) 80%),
+                          linear-gradient(to right, black(.4) 5%, black(.1) 40%, black(.5) 80%)
+        border-radius: 2em / .7em
+        box-shadow: .5em .3em .3em -.2em black(.5),
+                    1em -.3em .8em 1em black(.45)
+        &:before
+          width: 180%
+          height: 3.2em
+          left: -40%
+          bottom: .5em
+          background-color: lighten(lightslategrey,10)
+          border-radius: 50%
+          box-shadow: inset -1em -.8em .8em black(.4),
+                      inset -.3em -.3em .3em black(.4),
+                      inset .5em 0 .5em black(.25)
+        &:after
+          width: 100%
+          height: 3.2em
+          bottom: 3.3em
+          background-color: lighten(lightslategrey,10)
+          background-image: linear-gradient(to left, black(.5) 5%, black(.3) 20%, black(0) 60%),
+                            linear-gradient(to right, black(.2) 5%, black(0) 25%),
+                            linear-gradient(to bottom, white(0) 10%, white(.5) 10%, white(.5) 15%, white(0) 15%)
+          border-radius: .2em .2em .8em .8em / .2em
+      
+    &:nth-of-type(5)
+      background-image: linear-gradient(to right, black(.6) 40%, transparent 65%),
+                        linear-gradient(to bottom, black(.4), transparent 35%),
+                        $wallpaper-pattern
+      display: flex
+      justify-content: space-evenly
+      align-items: flex-end
+      
+      .camera
+        width: 6.9em
+        height: 3.8em
+        position: relative
+        background-repeat: no-repeat
+        background-image: linear-gradient(to right, black(.3) 20%, black(0) 40%),
+                          linear-gradient(to right, black(.6) 50%, white(.5) 50%),
+                          linear-gradient(to right, black(.6) 3%, black(0) 13%, black(0) 90%, black(.6) 97%),
+                          linear-gradient(to bottom, transparent 30%, #222 30%, #222 93%, transparent 93%),
+                          linear-gradient(to left, #ddd 5%, #aaa 10%, #aaa 80%, #ddd 92%),
+                          linear-gradient(to right, #555 20%, #999 25%, #999 40%, #555 45%, #555 65%, #888 75%),
+                          linear-gradient(to right, #666 20%, #aaa 25%, #aaa 40%, #666 45%, #666 65%, #999 75%),
+                          linear-gradient(to right, #555 20%, #999 25%, #999 40%, #555 45%, #555 65%, #888 75%)
+        background-size: 100% 89%, 
+                         100% 2%,
+                         100% 89%, 100% 89%, 100% 89%,
+                         14% 7%, 6% 10%, 14% 7%
+        background-position: 0 100%, 
+                             0 20%,
+                             0 100%, 0 100%, 0 100%,
+                             10% 5%, 30% 0, 90% 5%
+        box-shadow: 1.6em .5em 1.1em -.2em black(.3)
+        &:before
+          width: 60%
+          height: 24%
+          left: 22%
+          top: 10%
+          background-color: #777
+          background-repeat: no-repeat
+          background-image: repeating-linear-gradient(to right,  #333, #333 8%, black(0) 8%, black(0) 16%),
+                            repeating-linear-gradient(to bottom, #333, #333 12%, black(0) 12%, black(0) 24%),
+                            linear-gradient(#111, #111),
+                            radial-gradient(circle at 50% 45%, black(.1) 20%, black(.9) 22%)
+          background-size: 30% 100%
+          background-position: left center, left center,
+                               center center, right center
+          border-radius: .1em
+          box-shadow: 0 -.1em 0 #bbb,
+                      0 .2em 0 black(.35),
+                      inset 0 0 0 .15em #aaa
+        &:after
+          width: 2.9em
+          height: 2.8em
+          left: 30%
+          bottom: -5%
+          background-color: #222
+          background-repeat: no-repeat
+          background-image: radial-gradient(ellipse at center 30%, white(.4) 30%, white(0) 55%),
+                            radial-gradient(circle at center top, black(.4) 30%, black(0) 55%),
+                            radial-gradient(circle, darken(yellow,30) 15%,
+                                                    #111 16%, #111 28%,
+                                                    #555 29%, #555 36%,
+                                                    transparent 37%),
+                            linear-gradient(to bottom, black(.4) 40%, black(0) 60%),
+                            linear-gradient(130deg, white(0) 30%, white(.4) 50%, white(0) 70%),
+                            linear-gradient(-130deg, white(0) 30%, white(.3) 50%, white(0) 70%),
+                            radial-gradient(circle at center bottom, black(0)  57%, black(.3) 58%, 
+                                                                     black(.4) 62%, black(0) 63%),
+                            radial-gradient(circle at center top, white(0)  57%, white(.3) 58%,
+                                                                  white(.3) 62%, white(0) 63%),
+                            radial-gradient(circle, white(0) 50%, #aaa 51%)
+          background-size: 20% 10%, 25% 25%, 100% 100%, 100% 100%, 50% 50%, 50% 50%, 100% 50%, 100% 50%, 100% 100%
+          background-position: 49% 47.5%, 50% 70%, 0 0, 0 0, 0 100%, 100% 100%, 0 0, 0 100%, 0 0
+          border-radius: 50%
+          box-shadow: -1.6em .3em 0 -1.3em #333,
+                      -1.6em .3em 0 -1.2em #666,
+                      0 -.2em 0 #555,
+                      inset -.2em .3em .2em white(.3),
+                      inset 0 -.5em .2em -.3em black(.6)
+                      
+      .polaroid
+        width: 5.6em
+        height: 4.5em
+        position: relative
+        background-color: #d5d5d5
+        background-repeat: no-repeat
+        background-image: linear-gradient(to right, black(.1) 30%, black(0) 100%),
+                          linear-gradient(to top, white(.05) 90%, white(.3) 90%),
+                          linear-gradient(to top, black(.8) 50%, white(0) 50%, white(.15) 100%),
+                          linear-gradient(to right, white(.1), white(.25)),
+                          linear-gradient(to right, #222, #333),
+                          linear-gradient(black(.3), black(.3)),
+                          linear-gradient(to right, #CD5C5C 16.66%,
+                                                    palevioletred 16.66%, palevioletred 33.33%,
+                                                    lightsalmon 33.33%, lightsalmon 50%,
+                                                    gold 50%, gold 66.66%,
+                                                    forestgreen 66.66%, forestgreen 83.33%,
+                                                    royalblue 83.33%),
+                          linear-gradient(#333, #555)
+        background-size: 100% 100%,
+                         84% 10%,
+                         70% 9%,
+                         4% 9%,
+                         100% 39%,
+                         100% 6%,
+                         15% 80%,
+                         14% 6%
+        background-position: 0 0,
+                             50% 80%,
+                             50% 91%,
+                             92% 91%,
+                             0 102%, 
+                             0 55%,
+                             50% 100%,
+                             8% 14%
+        border-radius: .3em .3em 0 0
+        box-shadow: 1.6em .5em 1.1em -.3em black(.4)
+        &:before
+          width: 2.1em
+          height: 2.1em
+          right: calc(50% - 1em)
+          background-color: #444 
+          background-repeat: no-repeat
+          background-image: radial-gradient(ellipse, white(.35) 12%, white(0) 20%),
+                            radial-gradient(circle at left center, white(.18) 50%, white(0) 51%),
+                            radial-gradient(circle, black(.8) 35%, transparent 36%),
+                            linear-gradient(120deg, black(.6) 40%, black(0) 80%)
+          background-size: 100% 60%, 35% 35%, 100% 100%, 100% 100%
+          background-position: 0 20%, 80% 50%, 0 0, 0 0
+          border-radius: 50%
+          box-shadow:  0 0 0 .2em #333,
+                       0 .5em .5em black(.6),
+                      -1.9em .6em 0 -.75em firebrick,
+                      -1.9em .55em 0 -.65em black(.7),
+                      -1.9em .6em 0 -.55em #aaa,
+                      -1.9em .9em .2em -.65em black(.5),
+                       2.1em .5em 0 -.7em #222,
+                       2.1em .7em .2em -.7em black(.4)
+        &:after
+          width: .8em
+          height: .8em
+          top: .2em
+          right: .3em
+          background-color: #444
+          background-image: linear-gradient(45deg, black(.5) 30%, black(0) 60%)
+          border-radius: .2em
+          box-shadow: inset -.1em .1em 0 black(.8),
+                      inset 0 .2em .1em white(.5)
+                             
+    &:nth-of-type(6)
+      background-image: linear-gradient(to right, black(.6) 40%, transparent 75%),
+                        linear-gradient(to bottom, black(.5), transparent 75%),
+                        $wallpaper-pattern
+      
+      .pokeball
+        width: 4.8em
+        height: @width
+        left: .2em
+        bottom: .2em
+        background-color: firebrick
+        background-image: radial-gradient(circle at 55% 30%, white(.5) 3%, white(0) 20%)
+        border-radius: 50%
+        box-shadow: inset 2.1em 0 .5em -1.3em black(.9),
+                    inset -.6em -.8em 1em black(.7),
+                    inset 0 -2.4em 0 -1.1em white,
+                    inset 0 -2.8em 0 -1.1em black
+        &:before
+          width: 30%
+          height: 30%
+          left: 28%
+          top: 53%
+          background-color: black
+          background-image: radial-gradient(circle, white(.6) 20%, white(0) 23%),
+                            radial-gradient(circle, white(.5) 40%, white(0) 43%)
+          border-radius: 50%
+
+      .woodbox
+        width: calc(100% - 6.2em)
+        height: 70%
+        right: .5em
+        bottom: .3em
+        background-repeat: no-repeat
+        background-image: linear-gradient(to bottom, black(.6), transparent 20%, transparent 35%),
+                          linear-gradient(black(.7), black(.7)),
+                          linear-gradient(to left, black(.2), transparent 50%),
+                          radial-gradient(circle at left -10% bottom 1em, black(.6) 15%, transparent 40%),
+                          linear-gradient(to right, black(.2) 30%, black(0) 30%, black(0) 70%, black(.2) 70%),
+                          linear-gradient(to bottom, $gold-d 10%, $gold-l 10%,
+                                                     $gold-m 60%, $gold-d 60%, 
+                                                     $gold-d 80%, $gold-m 80%),
+                          linear-gradient(to right, black(.2) 30%, black(0) 30%, black(0) 70%, black(.2) 70%),
+                          linear-gradient(to bottom, $gold-d 10%, $gold-l 10%,
+                                                     $gold-m 60%, $gold-d 60%, 
+                                                     $gold-d 80%, $gold-m 80%),
+                          linear-gradient(to right, black(.2) 20%, black(0) 20%, black(0) 80%, black(.2) 80%),
+                          linear-gradient(to bottom, $gold-l,
+                                                     $gold-m 60%, $gold-d 60%, 
+                                                     $gold-d 80%, $gold-m 80%),
+                          repeating-linear-gradient(to bottom, darken(sienna,8),
+                                                               darken(sienna,8) .2em,
+                                                               darken(sienna,14) .2em,
+                                                               darken(sienna,14) .3em)
+        background-size: 100% 100%, 100% .1em,
+                         100% 100%, 100% 100%,
+                         5% 100%, 5% 100%, 5% 100%, 5% 100%,
+                         10% .8em, 10% .8em,
+                         100% 100%
+        background-position: 0 0, 0 1.3em,
+                             0 0, 0 0,
+                             15% 0, 15% 0, 85% 0, 85% 0,
+                             50% 1em, 50% 1em,
+                             0 0
+        border-radius: .8em .8em 0 0
+        &:after
+          width: 100%
+          height: .3em
+          bottom: -(@height)
+          background-image: linear-gradient(to right, darken(saddlebrown,35) 20%, transparent 20%),
+                            linear-gradient( to left, darken(saddlebrown,25) 20%, transparent 20%)
+
+    &:nth-of-type(7)
+      grid-row: 3/4
+      background-image: linear-gradient(155deg, darken(saddlebrown,27) 1.3em,
+                                                darken(saddlebrown,20) 2.3em,
+                                                darken(saddlebrown,12) 100%),
+                        linear-gradient(to right,  black(.6) 40%, transparent 65%),
+                        linear-gradient(to bottom, black(.4), transparent 35%),
+                        $wallpaper-pattern
+      background-size: 100% 1.3em, 100% 100%, 100% 100%, 100% 100%
+      background-position: 0 100.3%, top left, top left, top left
+      display: flex
+      justify-content: space-evenly
+      align-items: flex-end
+      z-index: 1
+      
+      .tubes
+        width: 9.6em
+        height: 30%
+        margin-bottom: .6em
+        position: relative
+        background-color: sienna
+        background-image: linear-gradient(to right, black(.3) 25%, black(0) 60%),
+                          linear-gradient(to bottom, lighten(sienna,10) 10%, transparent 10%),
+                          repeating-linear-gradient(to bottom, black(.2), black(.2) 4%,
+                                                               black(0) 7%, black(0) 8%),
+                          linear-gradient(to bottom, transparent 30%, alpha(firebrick,.2) 50%, transparent 70%),
+                          linear-gradient(174deg, transparent 75%, black(.2) 80%, transparent 85%),
+                          linear-gradient(178deg, transparent 25%, black(.2) 30%, transparent 40%)
+        border-radius: .2em .2em 0 0
+        box-shadow: .6em .2em .6em -.2em black(.3)
+        &:before
+          width: 90%
+          height: 240%
+          bottom: 0
+          left: 5%
+          z-index: -1
+          background-repeat: no-repeat
+          background-image: linear-gradient(to right, black(.25) 25%, black(0) 60%),
+                            repeating-linear-gradient(to right, transparent, transparent 3%,
+                                                                black(.6) 3%, black(0) 6%,
+                                                                black(0) 10%, black(.6) 13%,
+                                                                transparent 13%, transparent 16.5%),
+                            repeating-linear-gradient(to right, transparent, transparent 6%,
+                                                                white(.5) 7%, white(.5) 8%,
+                                                                transparent 9%, transparent 16.5%),
+                            repeating-linear-gradient(to right, transparent, transparent 3%,
+                                                                white(.3) 3%, white(.3) 13%,
+                                                                transparent 13%, transparent 16.5%),
+                            repeating-linear-gradient(to right, transparent, transparent 2%,
+                                                                white(.5) 2%, white(.3) 4%,
+                                                                white(.9) 5%, white(.5) 8%,
+                                                                white(.5) 8%, white(.3) 14%,
+                                                                transparent 14%, transparent 16.5%),
+                            repeating-linear-gradient(to right, transparent, transparent 4%,
+                                                                darken(peru,15) 4%, peru 12%,
+                                                                transparent 12%, transparent 16.5%),
+                            linear-gradient(#444, #444),
+                            linear-gradient(teal, teal),
+                            linear-gradient(firebrick, firebrick),
+                            linear-gradient(slateblue, slateblue),
+                            linear-gradient(goldenrod, goldenrod),
+                            linear-gradient(mediumvioletred, mediumvioletred)
+          background-size: 100% 100%,
+                           100% 80%, 100% 80%, 100% 80%, 100% .2em, 100% 1em,
+                           8% 70%, 8% 60%, 8% 65%, 8% 70%, 8% 66%, 8% 68%
+          background-position: 0 0,
+                               0 .6em, 0 .6em, 0 .6em, 0 .3em, 0 0,
+                               4% 100%, 22% 100%, 40% 100%, 58% 100%, 76% 100%, 94% 100%
+      .viewmaster
+        width: 4.8em
+        height: 4.3em
+        margin-bottom: .5em
+        position: relative
+        background-repeat: no-repeat
+        background-image: linear-gradient(lighten(firebrick,7), lighten(firebrick,7)),
+                          linear-gradient(lighten(firebrick,7), lighten(firebrick,7)),
+                          linear-gradient(lighten(firebrick,7), lighten(firebrick,7)),
+                          linear-gradient(lighten(firebrick,7), lighten(firebrick,7)),
+                          linear-gradient(to right, lighten(firebrick,7), lighten(firebrick,3)),
+                          linear-gradient(to right, black(.1) 20%, black(0) 60%),
+                          linear-gradient( 110deg, firebrick 10%, transparent 11%),
+                          linear-gradient(-110deg, firebrick 10%, transparent 11%),
+                          linear-gradient(  55deg, darken(firebrick,16) 25%, transparent 26%),
+                          linear-gradient( -55deg, darken(firebrick,16) 25%, #111 26%),
+                          radial-gradient(circle at 50% -60%, transparent 42%,
+                                                              lighten(firebrick,7) 42.5%, 
+                                                              lighten(firebrick,7) 44%,
+                                                              firebrick 44.5%),
+                          linear-gradient(#222, #222),
+                          linear-gradient( 150deg, transparent 41%, #222 42%),
+                          linear-gradient(-150deg, transparent 41%, #222 42%),
+                          radial-gradient(circle at 50% 40%, #ccc 47%, white(0) 48%)
+        background-size: 12% 3%, 12% 3%,
+                         3% 35%, 3% 35%,
+                         100% 3%,
+                         100% 100%,
+                         35% 10%, 35% 10%, 35% 10%, 35% 10%,
+                         100% 100%,
+                         10% 10%, 10% 10%, 10% 10%,
+                         100% 100%
+        background-position: 0 0, 100% 0,
+                             0 0, 100% 0,
+                             0 35%,
+                             0 0,
+                             50% 26%, 50% 26%, 50% 26%, 50% 26%,
+                             0 0,
+                             50% 7%, 35% 7%, 65% 7%,
+                             0 0
+        border-radius: .2em .2em .5em .5em / .3em .3em 2.1em 2.1em
+        box-shadow: 2.2em -1.4em 0 -1.9em darken(royalblue,5),
+                    .8em 0 .6em black(.5)
+        &:before,
+        &:after
+          box-sizing: border-box
+          width: 1.9em
+          height: 1.4em
+          top: 32%
+          background-color: lighten(firebrick,2)
+          background-image: radial-gradient(ellipse at 50% 40%, white(.3) 10%, white(0) 15%),
+                            radial-gradient(circle, #111 30%, 
+                                                    lighten(firebrick,7) 33%, lighten(firebrick,7) 40%,
+                                                    transparent 42%),
+                            repeating-linear-gradient(to bottom, transparent, transparent 2%,
+                                                                 black(.1) 2%, black(.1) 3%,
+                                                                 transparent 3%)
+          border: .1em solid lighten(firebrick,7)
+        &:before
+          left: -4%
+          border-radius: .2em .2em 2em .2em / .2em .5em .6em .2em
+          box-shadow: inset .2em .2em .3em black(.3),
+                      0 .2em 0 darken(firebrick,4),
+                      .5em .5em .5em black(.3),
+                      1.1em -.3em .3em -.2em black(.2)
+        &:after
+          right: -4%
+          border-radius: .2em .2em .2em 1.3em / .5em .2em .2em .6em
+          box-shadow: inset -.2em .2em .3em black(.2),
+                      0 .2em 0 darken(firebrick,5),
+                      -.2em .5em .5em black(.25),
+                      -1.1em -.3em .3em -.2em black(.1)
+
+    &:nth-of-type(8)
+      grid-column: 2/3
+      grid-row: 4/5
+      background-image: radial-gradient(ellipse, darken(aqua,35) 15%, transparent 75%),
+                        linear-gradient(155deg, darken(saddlebrown,27) 1.3em,
+                                               darken(saddlebrown,20) 2.3em,
+                                               darken(saddlebrown,12) 100%),
+                        radial-gradient(ellipse, darken(aqua,40) 20%, transparent 75%),
+                        linear-gradient(to right, black(.6) 40%, transparent 65%),
+                        linear-gradient(to bottom, black(.5), transparent 55%),
+                        $wallpaper-pattern
+      background-size: 100% 2.9em, 100% 2.4em,
+                       100% 90%, 100% 100%, 100% 100%, 100% 100%
+      background-position: left bottom, 0 100.3%,
+                           center bottom, top left, top left, top left
+      z-index: 1
+      
+      $lightsaber-silver = linear-gradient(to bottom, #666 5%, #bbb 20%,
+                                                      #ccc 30%, #ccc 75%, #bbb 80%, #666 85%, darken(aqua,18) 100%)
+      $lightsaber-gold = linear-gradient(to bottom, #222 5%, $gold-d 20%, $gold-l 30%,
+                                                             $gold-l 60%, $gold-d 70%, #333 85%, darken(aqua,24) 100%)
+      
+      .lightsaber
+        width: 12.8em
+        height: 2.1em
+        left: 50%
+        bottom: 2.3em
+        margin-left: -(@width/2)
+        background-repeat: no-repeat
+        background-image: linear-gradient(to right, black(.3) 20%, black(0) 40%),
+                          linear-gradient(to bottom, black(0), black(.6) 40%, black(.6) 60%, black(0)),
+                          linear-gradient(to bottom, white(.15), white(0) 50%),
+                          repeating-linear-gradient(to bottom, #222, #222, black 20%),
+                          $lightsaber-silver,
+                          repeating-linear-gradient(to right, white(0), white(0) 6%,
+                                                                        white(.25) 8%, white(.25) 10%,
+                                                                        white(0) 10%, white(0) 12%),
+                          repeating-linear-gradient(to right, white(0), white(0) 6%,
+                                                                        white(.15) 8%, white(.15) 10%,
+                                                                        white(0) 10%, white(0) 12%),
+                          repeating-linear-gradient(to right, black(0), black(0) 5%, #111 5%, #111 12%),
+                          linear-gradient(to bottom, #111 5%, #222 20%, #333 30%, #222 60%, #222 70%, #111 90%),
+                          $lightsaber-gold,
+                          linear-gradient(to right, black(.4) 20%, black(0) 30%),
+                          $lightsaber-gold,
+                          $lightsaber-gold,
+                          linear-gradient(to right, black(.35) 25%, black(0) 35%),
+                          $lightsaber-gold,
+                          linear-gradient(to bottom, darken(sienna,7) 5%, lighten(sienna,10) 20%, lighten(sienna,10) 30%,
+                                                     darken(sienna,3) 60%, sienna 70%,
+                                                     darken(sienna,7) 80%, darken(aqua,24) 100%),
+                          $lightsaber-silver,
+                          linear-gradient(to right, black(.35) 15%, black(0) 25%, black(0) 70%, black(.3) 85%),
+                          $lightsaber-silver,
+                          $lightsaber-silver
+        background-size: 100% 100%,
+                         100% 30%,
+                         12% 95%, 12% 95%,
+                         40% 90%,
+                         28% 25%, 28% 20%, 28% 100%,
+                         65% 70%,
+                         72% 45%,
+                         4% 55%, 4% 55%,
+                         2% 90%,
+                         5% 76%, 5% 76%,
+                         90% 30%,
+                         3% 55%,
+                         4.5% 80%, 4.5% 80%,
+                         2% 100%
+        background-position: 0 0,
+                             0 center,
+                             11% center, 11% center,
+                             0 center,
+                             50% 10%, 50% 85%, 50% center,
+                             0 center,
+                             0 center,
+                             75% center, 75% center,
+                             77% center,
+                             81% center, 81% center,
+                             0 center,
+                             93% center,
+                             97.5% center, 97.5% center,
+                             100% center
+        border-radius: .3em 0 0 .3em
+        box-shadow: 0 1.7em 0 -1em darken(aqua,14),
+                    0 1.7em .8em -.6em darken(aqua,18)
+        &:before
+          width: 100%
+          height: 3.2em
+          bottom: -1.6em
+          background-repeat: no-repeat
+          background-image: linear-gradient(to right, black(.4) 20%, black(0) 40%),
+                            linear-gradient(to right, white(.2) 50%, white(.5)),
+                            linear-gradient(to right, white(.2) 50%, white(.5)),
+                            linear-gradient(110deg, transparent 2%, #444 3%),
+                            linear-gradient(-110deg, transparent 2%, #444 3%),
+                            linear-gradient(to top, #111 .5em, transparent .5em)
+          background-size: 100% 100%, .2em 40%, .2em 40%, 60% 25%, 60% 25%, 100% 100%
+          background-position: 0 0,
+                               left 3% bottom .8em,
+                               right 3% bottom .8em,
+                               left bottom .5em,
+                               right bottom .5em,
+                               left bottom
+          z-index: -1
+        &:after
+          width: 4.8em
+          height: 125%
+          left: 0
+          bottom: 0
+          background-repeat: no-repeat
+          background-image: linear-gradient(to bottom, transparent 30%, black(.4) 35%, black(.4) 40%,
+                                                       transparent 40%, transparent 75%, black(.5) 100%),
+                            linear-gradient(to right, #a5a5a5 40%, #bbb 70%),
+                            linear-gradient(to bottom, #aaa 20%, #999 20%,
+                                                       #999 50%, #666 80%),
+                            linear-gradient(to bottom, #aaa 20%, #888 20%,
+                                                       #888 60%, #444 90%),
+                            linear-gradient(to bottom, #444 20%, #666 60%, darken(aqua,20) 100%)
+          background-size: 42% 25%, 42% 25%,
+                           14% 25%,
+                           14% 25%,
+                           14% 20%
+          background-position: right top, right top,
+                               6% 22%,
+                               6% 63%,
+                               6% 100%
+      
+    &:nth-of-type(9)
+      grid-column: 3/4
+      grid-row: 3/5
+      background-color: darken(darkolivegreen,16)
+      background-image: linear-gradient(155deg, darken(saddlebrown,21) 1.5em,
+                                                darken(saddlebrown,17) 2.5em,
+                                                darken(saddlebrown,10) 100%),
+                        linear-gradient(to right, black(.3) 40%, transparent 75%),
+                        $wallpaper-pattern
+      background-size: 100% 2.4em, 100% 100%, 100% 100%
+      background-position: 0 100.3%, top left, top left
+      overflow: hidden
+      &:before
+        width: 50%
+        height: .2em
+        top: 0
+        left: 25%
+        background-color: alpha(khaki,.7)
+        box-shadow: 0 0 1.6em 3.9em alpha(gold,.3)
+      
+      .bugs-board
+        box-sizing: border-box
+        width: 80%
+        height: 40%
+        padding: .8em
+        right: 10%
+        top: 1.1em
+        background-color: darken(tan,11)
+        box-shadow: inset .5em .5em .3em black(.85),
+                    .2em .8em .5em -.2em black(.4)
+        display: flex
+        justify-content: space-around
+        align-items: center
+        &:before,
+        &:after
+          box-sizing: border-box
+          width: 102%
+          height: 102%
+          left: -1%
+          top: -1%
+        &:before
+          border: .5em solid
+          border-image: linear-gradient(to top, darken(peru,28), darken(peru,23)) 1 1
+        &:after
+          background-image: linear-gradient(to bottom, alpha(gold,.2) 5%, white(0) 40%),
+                            linear-gradient(to top, black(.2) 20%, black(0) 60%)
+          
+        .bugs
+          position: relative
+        
+        .bugs:first-child
+          width: 3.2em
+          height: 2.6em
+          background-repeat: repeat-x
+          background-image: radial-gradient(ellipse, transparent 52%, #333 53%, #444 62%, transparent 63%),
+                            radial-gradient(ellipse, transparent 47%, #333 48%, #444 58%, transparent 59%),
+                            linear-gradient(to right, transparent 35%,
+                                                      black(.6) 35%, black(.6) 39%,
+                                                      transparent 39%, transparent 58%,
+                                                      black(.6) 58%, black(.6) 61%,
+                                                      transparent 61%)
+          background-size 50% 20%, 50% 20%, 50% 50%
+          background-position: 0 50%, 0 80%, 0 0
+          display: flex
+          align-items: flex-end
+          justify-content: space-around
+          &:before,
+          &:after
+            width: 1em
+            height: 2.2em
+            position: static
+            background-image: radial-gradient(circle at 50% 40%, #999 .1em, transparent .2em),
+                              radial-gradient(circle at 54% 44%, black(.3) .1em, transparent .2em),
+                              radial-gradient(circle at 50% 10%, black(.1) 10%, black(.3) 20%, black(0) 40%),
+                              radial-gradient(ellipse at 50% 100%, forestgreen 30%, darkgreen 50%)
+            border-radius: .5em / .8em .8em 1.3em 1.3em
+            box-shadow: inset 0 -.2em .2em black(.6),
+                        inset 0 -.6em .2em -.3em firebrick,
+                        0 .3em .2em black(.3)
+
+        .bugs:nth-child(2)
+          width: 2.2em
+          height: 2.2em
+          background-repeat: repeat-x
+          background-image: radial-gradient(ellipse, transparent 52%, #333 53%, #444 62%, transparent 63%),
+                            radial-gradient(ellipse, transparent 47%, #333 48%, #444 58%, transparent 59%),
+                            linear-gradient(to right, transparent 35%,
+                                                      black(.6) 35%, black(.6) 39%,
+                                                      transparent 39%, transparent 58%,
+                                                      black(.6) 58%, black(.6) 63%,
+                                                      transparent 63%)
+          background-size 50% 20%, 50% 20%, 50% 94%
+          background-position: 0 50%, 0 70%, 0 0
+          display: flex
+          align-items: center
+          justify-content: space-around
+          &:before,
+          &:after
+            width: .7em
+            height: 1.6em
+            position: static
+            background-repeat: no-repeat
+            background-image: radial-gradient(circle at 50% 40%, #999 .1em, transparent .2em),
+                              radial-gradient(circle at 54% 45%, black(.7) .1em, transparent .2em),
+                              linear-gradient(to bottom, black(.5) 20%,
+                                                         black(.2) 25%, black(.2) 30%, 
+                                                         transparent 35%),
+                              repeating-linear-gradient(to bottom, transparent,
+                                                                   transparent 8%, black(.2) 8%,
+                                                                   black(.2) 12%),
+                              radial-gradient(ellipse at 50% 100%, darken(peru,10) 30%, saddlebrown 50%)
+            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 80%, 100% 100%
+            background-position: center bottom
+            border-radius: .5em / 1.3em 1.3em .5em .5em
+            box-shadow: inset 0 -.2em .2em black(.5),
+                        0 .3em .2em black(.2)
+
+        .bugs:nth-child(3)
+          width: 2.5em
+          height: 2.5em
+          background-image: linear-gradient(to right, transparent 35%,
+                                                      black(.4) 35%, black(.4) 39%,
+                                                      transparent 39%, transparent 57%,
+                                                      black(.4) 57%, black(.4) 61%,
+                                                      transparent 61%)
+          background-size: 50% 100%
+          display: flex
+          align-items: center
+          justify-content: space-around
+          &:before,
+          &:after
+            width: .9em
+            height: 1.8em
+            position: static
+            background-image: radial-gradient(circle at 50% 40%, #aaa .1em, transparent .2em),
+                              radial-gradient(circle at 54% 45%, black(.4) .1em, transparent .2em),
+                              linear-gradient(to bottom, transparent 20%,
+                                                         black(.2) 25%, black(.2) 30%, 
+                                                         transparent 35%),
+                              radial-gradient(ellipse at 50% 100%, darken(darkkhaki,15) 30%,
+                                                                   darken(darkkhaki,30) 50%)
+            border-radius: .5em / .7em .7em 1.3em 1.3em
+            box-shadow: inset 0 -.3em .2em black(.5),
+                        0 .3em .2em black(.2)
+
+        .bugs:nth-child(4)
+          width: 3.2em
+          height: 2.4em
+          background-repeat: repeat-x
+          background-image: linear-gradient(100deg, transparent 20%,
+                                                    black(.5) 21%, black(.5) 30%,
+                                                    transparent 31%),
+                            linear-gradient(-102deg, transparent 29%,
+                                                     black(.5) 30%, black(.5) 35%,
+                                                     transparent 36%) 
+          background-size: 27% 60%, 25% 60%
+          background-position: 0 50%, 100% 50%
+          display: flex
+          align-items: center
+          justify-content: space-around
+          &:before,
+          &:after
+            width: 1.1em
+            height: 2.4em
+            position: static
+            background-color: saddlebrown
+            background-repeat: no-repeat
+            background-image: radial-gradient(circle at 50% 40%, #999 .1em, transparent .2em),
+                              radial-gradient(circle at 54% 45%, black(.3) .1em, transparent .2em),
+                              linear-gradient(to bottom, black(.5) 20%,
+                                                         black(.2) 25%, black(.2) 30%, 
+                                                         transparent 35%),
+                              repeating-linear-gradient(to bottom, transparent,
+                                                                   transparent 8%, black(.2) 8%,
+                                                                   black(.2) 12%),
+                              radial-gradient(ellipse at 50% 100%, alpha(peru,.6) 30%, saddlebrown 50%)
+            background-size: 100% 100%, 100% 100%, 100% 100%, 100% 80%, 100% 100%
+            background-position: center bottom
+            border-radius: .6em / 1.3em 1.3em 1.6em 1.6em
+            box-shadow: inset 0 -.2em .2em black(.5),
+                        0 .3em .2em black(.2)
+
+      .bust
+        width: 2.5em
+        height: 2em
+        left: 1.8em
+        bottom: .7em
+        background-image: linear-gradient(to right, $gold-d 10%,
+                                                    $gold-l 20%, $gold-l 30%,
+                                                    $gold-m 50%, $gold-m 70%,
+                                                    $gold-d 80%, darken($gold-d,10) 90%)
+        border-bottom-left-radius: 1.3em .5em
+        border-bottom-right-radius: 1.3em .5em
+        box-shadow: .5em .1em .3em black(.2),
+                    2em .7em .8em -.5em black(.3)
+        &:before
+          width: 4em
+          height: 4em
+          left: -.8em
+          bottom: 1.2em
+          background-color: $gold-m
+          background-repeat: no-repeat
+          background-image: linear-gradient(to bottom, $gold-m 20%, transparent 40%),
+                            linear-gradient( 150deg, transparent 80%, $gold-d 90%),
+                            linear-gradient(-150deg, transparent 80%, $gold-d 90%),
+                            linear-gradient(to right, $gold-l 50%, $gold-m 50%),
+                            linear-gradient(to bottom, $gold-m 20%, darken($gold-d,5)),
+                            linear-gradient(-160deg, alpha($gold-m,0) 35%,
+                                                     darken($gold-m,10) 45%, darken($gold-m,6) 56%,
+                                                     alpha($gold-m,0) 70%),
+                            linear-gradient( 160deg, alpha($gold-d,0) 35%,
+                                                     darken($gold-d,6) 45%, $gold-d 56%,
+                                                     alpha($gold-d,0) 70%)
+          background-size: 20% 80%, 10% 75%, 10% 75%, 20% 75%,
+                           20% 8%,
+                           50% 100%, 50% 100%
+          background-position: 53% 100%, 46% 30%, 57% 30%, 53% 30%,
+                               52% 92%,
+                               0 0, 100% 0
+          border-radius: 1.6em / .5em .5em 2em 2em
+          box-shadow: 0 .5em .2em -.2em black(.3),
+                      .8em 0 .8em black(.2),
+                      inset 0 .7em .1em -.5em black(.3),
+                      inset -.3em 0 .3em black(.4),
+                      inset -.8em 0 .5em black(.2),
+                      inset .3em 0 .2em darken($gold-d,10),
+                      inset 1em 0 .3em $gold-l
+        &:after
+          width: 140%
+          height: 200%
+          left: -20%
+          bottom: 4.2em
+          background-repeat: no-repeat
+          background-image: radial-gradient(circle at left center, black(.2) 33%, transparent 38%),
+                            radial-gradient(circle, transparent 35%, #bbb 40%, #bbb 55%, transparent 57%),
+                            radial-gradient(circle at left center, black(.2) 33%, transparent 38%),
+                            radial-gradient(circle, transparent 35%, #bbb 40%, #bbb 55%, transparent 57%),
+                            linear-gradient(to top, black(.6) 5%, black(0) 25%),
+                            linear-gradient(50deg, transparent 35%, #bbb 37%, #bbb 55%, transparent 57%),
+                            linear-gradient(-75deg, transparent 35%, #bbb 37%, #bbb 55%, transparent 57%),
+                            linear-gradient(-30deg, black(.8) 5%, black(0) 15%),
+                            linear-gradient(110deg, transparent 40%, #aaa 45%, #999 100%),
+                            linear-gradient(-30deg, black(.8) 5%, black(0) 11%),
+                            linear-gradient(105deg, transparent 40%, #aaa 45%, #999 100%),
+                            linear-gradient(-35deg, black(.8) 5%, black(0) 15%),
+                            linear-gradient(105deg, transparent 40%, #aaa 45%, #999 100%),
+                            radial-gradient(ellipse, darken($gold-d,20) 64%,  transparent 70%)
+          background-size: 35% 35%, 35% 35%, 35% 35%, 35% 35%,
+                           30% 30%, 25% 25%, 25% 25%,
+                           7% 90%, 7% 90%, 7% 80%, 7% 80%, 6% 95%, 6% 95%,
+                           100% 20%
+          background-position: 45% 92%, 15% 92%, 80% 87%, 52% 87%,
+                               50% 99%, 40% 112%, 44% 112%,
+                               73% 100%, 73% 100%, 82% 100%, 82% 100%, 90% 100%, 90% 100%,
+                               50% 100%
+          border-bottom-right-radius: 3em 1.2em
+          border-bottom-left-radius: 3em 1.2em
+
+      .tray
+        width: 10em
+        height: 1.5em
+        right: 1em
+        bottom: .4em
+        background-repeat: no-repeat
+        background-image: linear-gradient(to bottom, #bbb, #333),
+                          linear-gradient(to bottom, #bbb, #444, #999),
+                          linear-gradient(to bottom, #bbb, #444, #999),
+                          linear-gradient(to right, #5d5d5d, #656565)
+        background-size: 100% 10%, 100% 10%, 100% 10%, 100% 100%
+        background-position: 0 0, 0 40%, 0 60%, 0 0
+        border-radius: 0 0 .2em .2em
+        box-shadow: .5em -.1em .5em .2em black(.3)
+        &:before
+          width: 100%
+          height: 1.5em
+          top: -(@height)
+          background-repeat: no-repeat
+          background-image: linear-gradient(#555, #555),
+                            linear-gradient( 110deg, transparent 8%, #666 9%, #666 11%, #222 12%),
+                            linear-gradient(-115deg, transparent 10%, #666 11%, #666 13%, #222 14%)
+          background-size: 85% 10%, 60% 100%, 60% 100%
+          background-position: 50% 0, 0 0, 100% 0
+       
+      .bottle-amber
+        width: 3em
+        height: 30%
+        right: 1.5em
+        bottom: 1.9em
+        background-color: sienna
+        background-repeat: no-repeat
+        background-image: linear-gradient(to top, white(0) 10%, white(.3) 20%, white(.3) 80%, white(0) 90%),
+                          linear-gradient(#ccc, #ccc),
+                          linear-gradient(#ccc, #ccc),
+                          linear-gradient(to bottom, black(.6), black(0) 15%),
+                          linear-gradient(to top, black(.4) 60%, black(0) 80%),
+                          linear-gradient(to top, black(.3), black(0) 20%)
+        background-size: 10% 80%, 100% 10%, 100% 10%, 100% 100%, 100% 100%, 100% 100%
+        background-position: 25% 60%, 50% 50%, 50% 70%, 0 0, 0 0, 0 0 
+        border-radius: 3.2em 3.2em 0 0
+        box-shadow: inset -.5em 0 .3em black(.6),
+                    inset  .5em 0 .3em black(.6)
+        &:before
+          width: 40%
+          height: 1.3em
+          left: 30%
+          top: -1em
+          background-repeat: no-repeat
+          background-image: linear-gradient(to right, black(.4) 15%, black(0) 30%, black(0) 70%, black(.4) 85%),
+                            linear-gradient(sienna, sienna),
+                            linear-gradient(to right, black(.4) 15%, black(0) 30%, black(0) 70%, black(.4) 85%),
+                            linear-gradient(darken(sienna,5), darken(sienna,5)),
+                            linear-gradient(to right, darken(tan,28) 15%, tan 30%, tan 70%, darken(tan,28) 85%)
+          background-size: 100% 35%, 100% 35%, 70% 80%, 70% 80%, 60% 50%
+          background-position: center 30%, center 30%, center bottom, center bottom, center top
+      
+      .pencils
+        width: 2.2em
+        height: 2.9em
+        right: 4.8em
+        bottom: 1.9em
+        background-image: linear-gradient(to top, black(.3), black(0) 25%),
+                          linear-gradient(to right, $gold-d 10%,
+                                                    $gold-l 20%, $gold-l 30%,
+                                                    $gold-m 50%, $gold-m 70%,
+                                                    $gold-d 80%, darken($gold-d,5) 90%)
+        border-top-right-radius: 3em 1.2em
+        border-top-left-radius: 3em 1.2em
+        &:after
+          width: 100%
+          height: 90%
+          bottom: 2.2em
+          background-repeat: no-repeat
+          background-image: repeating-linear-gradient(to right, palevioletred, palevioletred 5%,
+                                                                darken(palevioletred,12) 20%),
+                            linear-gradient(to bottom, white(0) 40%, white(.1) 50%, white(0) 60%),
+                            repeating-linear-gradient(to right, #888, #888 5%, #444 20%),
+                            repeating-linear-gradient(to right, darken(khaki,25), darken(khaki,25) 7%,
+                                                                darken(khaki,35) 7%, darken(khaki,35) 14%,
+                                                                darken(khaki,45) 14%, darken(khaki,45) 21%),
+                            radial-gradient(ellipse, darken($gold-d,20) 64%,  transparent 70%)
+          background-size: 70% 12%, 70% 12%, 70% 15%, 70% 80%, 100% 20%
+          background-position: 50% 0, 50% 10%, 50% 10%, 50% 100%, 50% 100%
+          border-bottom-right-radius: 3em 1.2em
+          border-bottom-left-radius: 3em 1.2em
+          box-shadow: inset 0 -.2em .2em black(.4)
+                      
+      .twine
+        width: 3.4em
+        height: 5em
+        right: 7.1em
+        bottom: 1.9em
+        overflow: hidden
+        &:before
+          width: 3.4em
+          height: 3.4em
+          bottom: -1.3em
+          background-color: burlywood
+          background-image: repeating-linear-gradient(160deg, burlywood, burlywood .1em,
+                                                                         black(.4) .15em, black(.4) .2em)
+          border-radius: 50%
+          box-shadow: inset -.5em -.5em .5em black(.5),
+                      inset  .2em   0   .4em black(.3),
+                      inset  -.2em 0 0 black(.4),
+                      inset  -.3em 0 0 burlywood,
+                      inset  -.4em 0 0 black(.4),
+                      inset  -.5em 0 0 burlywood,
+                      inset  -.6em 0 0 black(.4),
+                      inset  -.7em 0 0 burlywood,
+                      inset  -.8em 0 0 black(.4),
+                      inset  -.9em 0 0 burlywood,
+                      inset -1.0em 0 0 black(.4)
+        &:after
+          width: 100%
+          height: 100%
+          background-image: linear-gradient(to top, black(.3), black(0) 10%)
+      
+    &:nth-of-type(10)
+      grid-column: 4/5
+      grid-row: 2/5
+      background-image: linear-gradient(-235deg, darken(saddlebrown,20) 10%, transparent 80%),
+                        linear-gradient(50deg, transparent 1.4em, darken(saddlebrown,12) 1.4em),
+                        linear-gradient(155deg, darken(saddlebrown,27) 1.9em,
+                                                darken(saddlebrown,20) 3.5em,
+                                                darken(saddlebrown,12) 100%),
+                        linear-gradient(to right, black(.5) 40%, transparent 80%),
+                        linear-gradient(to bottom, black(.3) 10%, transparent 35%),
+                        $wallpaper-pattern
+      background-size: 1.9em 100%, 1.9em 100%, 100% 2.4em, 100% 100%, 100% 100%, 100% 100%
+      background-position: 100.3% 0, 100.3% 0, 0 100.3%, top right, top right, top right
+      z-index: 1
+      // medal
+      &:before
+        width: 3em
+        height: 4em
+        right: .6em
+        top: calc(var(--gap) * -1)
+        background-repeat: no-repeat
+        background-image: radial-gradient(circle at center top, black(.2) 40%, transparent 42%),
+                          radial-gradient(circle, $gold-m 50%, transparent 52%),
+                          radial-gradient(circle, $gold-l 52%, transparent 54%),
+                          linear-gradient( 65deg, transparent 25%,
+                                                  firebrick 26%, firebrick 35%,
+                                                  #ddd 36%, #ddd 45%,
+                                                  steelblue 46%, steelblue 55%,
+                                                  black(.3) 56%, black(.2) 62%, black(0) 67%),
+                          linear-gradient(-65deg, black(0) 15%, black(.2) 20%, black(.2) 25%,
+                                                  firebrick 26%, firebrick 35%,
+                                                  #ddd 36%, #ddd 45%,
+                                                  steelblue 46%, steelblue 55%,
+                                                  transparent 56%)
+        background-size: 3em 1.5em, 3em 3em, 3em 3em,
+                         90% 50%, 90% 50%
+        background-position: 50% 100%, 50% 100%, 50% 90%,
+                             0 0, 100% 0
+      // fossil
+      &:after
+        width: 3.2em
+        height: 2em
+        right: 1.9em
+        bottom: .4em
+        background-color: #c5c5c5
+        background-repeat: no-repeat
+        background-image: radial-gradient(circle at 50% 40%, #ddd 5%, white(0) 10%),
+                          radial-gradient(circle at 50% 65%, #eee 10%, white(0) 15%),
+                          radial-gradient(circle at 50% 88%, #ddd 5%, white(0) 10%),
+                          radial-gradient(circle at 33% 26%, #ddd 3%, white(0) 8%),
+                          radial-gradient(circle at 20% 45%, #eee 6%, white(0) 11%),
+                          radial-gradient(circle at 30% 65%, #ddd 5%, white(0) 10%),
+                          radial-gradient(circle at 50% 88%, #ddd 4%, white(0) 9%),
+                          radial-gradient(circle at 70% 26%, #ddd 3%, white(0) 8%),
+                          radial-gradient(circle at 80% 45%, #eee 6%, white(0) 11%),
+                          radial-gradient(circle at 70% 65%, #eee 5%, white(0) 10%),
+                          radial-gradient(circle at 50% 88%, #ddd 4%, white(0) 9%),
+                          radial-gradient(ellipse, black(.7) 40%, black(0) 48%)
+        background-size: 50% 100%, 50% 100%, 50% 100%,
+                         50% 100%, 50% 100%, 50% 100%, 50% 100%,
+                         50% 100%, 50% 100%, 50% 100%, 50% 100%,
+                         80% 30%
+        background-position: 50% 0, 50% 0, 50% 0,
+                             0 0, 0 0, 0 0, 0 0,
+                             100% 0, 100% 0, 100% 0, 100% 0,
+                             50% 0
+        border-radius: 50%
+        box-shadow: inset .1em .1em .2em black(.2),
+                     inset -.2em -.2em .2em black(.3),
+                    inset -1.1em 0 .1em -.3em black(.2),
+                    inset  1.1em 0 .1em -.3em black(.1),
+                    .6em .3em .2em -.3em black(.2)
+        
+      
+      .poster
+        width: 70%
+        height: 60%
+        left: 10%
+        top: 10%
+        background-image: radial-gradient(circle at bottom left, gold 30%,
+                                                                 crimson 30.5%, crimson 35%,
+                                                                 gold 35.5%, gold 45%,
+                                                                 crimson 45.5%, crimson 52%,
+                                                                 gold 52.5%, gold 57%,
+                                                                 crimson 57.5%)
+        box-shadow: inset 0 0 0 .5em white
+        &:before
+          width: 100%
+          height: 8%
+          bottom: -8%
+          background-repeat: no-repeat
+          background-image: linear-gradient(177deg,  black(.8) 10%, transparent 50%),
+                            linear-gradient(-177deg, black(.8) 10%, transparent 50%)
+          background-size: 48% 100%
+          background-position: 3% 0,
+                               97% 0
+        &:after
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          background-repeat: no-repeat
+          background-image: linear-gradient(to right, black(.72) 50%, black(.32) 100%),
+                            linear-gradient(to bottom, black(.4) 10%, transparent 40%),
+                            linear-gradient(to right, white(.1) .5%, black(.15) 1.2%, transparent 1.2%),
+                            linear-gradient(to bottom, white(.1) .5%, black(.15) 1.2%, transparent 1.2%),
+                            linear-gradient(to bottom, white(.1) .5%, black(.15) 1.2%, transparent 1.2%),
+                            linear-gradient(265deg,  black(.3), transparent 10%),
+                            linear-gradient(5deg,    black(.3), transparent 15%),
+                            linear-gradient(-5deg,   black(.2), transparent 10%),
+                            linear-gradient(5deg,    black(.2), transparent 10%),
+                            linear-gradient(-265deg, black(.3), transparent 10%),
+                            linear-gradient(-5deg,   black(.3), transparent 15%),
+                            linear-gradient(266deg,  black(.3), transparent 10%)
+          background-size: 100% 100%,
+                           100% 100%,
+                           50% 100%,
+                           100% 33.3333%,
+                           100% 33.3333%,
+                           50% 33.3333%,
+                           50% 33.3333%,
+                           50% 33.3333%,
+                           50% 33.3333%,
+                           50% 33.3333%,
+                           50% 33.3333%,
+                           50% 33.3333%
+          background-position: left top,
+                               left top,
+                               right top,
+                               left center,
+                               left bottom,
+                               left  top,
+                               left  top,
+                               right top,
+                               left  center,
+                               right center,
+                               right center,
+                               left  bottom
+      .planets
+        width: 100%
+        height: 8.8em
+        top: 0
+        background-repeat: no-repeat
+        background-image: linear-gradient(to top, white(.3) 80%, white(0) 100%),
+                          radial-gradient(circle, transparent 10%, grey 20%, #555 30%, transparent 30%),
+                          linear-gradient(to top, white(.3) 80%, white(0) 100%),
+                          radial-gradient(circle, transparent 10%, grey 20%, #555 30%, transparent 30%)
+        background-size: .1em 4.6em,
+                         1.6em 1.6em,
+                         .1em 3em,
+                         1.3em 1.3em
+        background-position: calc(54% + 2em) top,
+                             calc(54% + 2em) 4em,
+                             calc(30% + 1.2em) top,
+                             calc(30% + 1em) 2.5em
+        &:before
+          width: 4.1em
+          height: @width
+          left: 54%
+          top: 4.8em
+          background-color: dodgerblue
+          background-repeat: no-repeat
+          background-image: radial-gradient(circle, white(.4) 10%, white(0) 60%),
+                            radial-gradient(ellipse at 10% 10%, forestgreen 30%, alpha(forestgreen,0) 60%),
+                            radial-gradient(ellipse at 90% 20%, forestgreen 45%, alpha(forestgreen,0) 80%),
+                            radial-gradient(ellipse at 50% 90%, forestgreen 20%, alpha(forestgreen,0) 60%)
+          background-size: 50% 50%,
+                           50% 50%,
+                           50% 50%,
+                           80% 50%
+          background-position: 10% 10%,
+                               left top,
+                               right top,
+                               10% 100%
+          border-radius: 50%
+          box-shadow: inset -.6em -1em 1.6em black(.75),
+                      .8em 5em 1.6em black(.6)
+        &:after
+          width: 2.4em
+          height: @width
+          left: 30%
+          top: 3.2em
+          background-color: #bbb
+          background-repeat: no-repeat
+          background-image: radial-gradient(circle, white(.6) 10%, white(0) 60%)
+          background-size: 50% 50%
+          background-position: 10% 10%
+          border-radius: 50%
+          box-shadow: inset -.2em -.5em 1em black(.9),
+                      .8em 4.8em 1.6em black(.6)
+
+      .pressed-feather
+        box-sizing: border-box
+        width: 35%
+        height: 17%
+        right: 2.6em
+        bottom: 1.9em
+        background-repeat: no-repeat
+        background-image: linear-gradient(65deg, white(0) 85%, white(.12) 90%, white(.12) 94%, white(0) 98%),
+                          linear-gradient(white(.1), white(.1))
+        background-position: center center
+        border: .5em solid
+        border-image: linear-gradient(to right, darken(peru,28), darken(peru,15)) 1 1
+        box-shadow: inset .2em .2em .3em black(.2),
+                    1em 0 .6em black(.4)
+        &:before
+          width: 70%
+          height: 1.1em
+          right: 10%
+          top: calc(50% - .6em)
+          background-repeat: no-repeat
+          background-image: repeating-linear-gradient( 140deg, darken(mediumturquoise,30),
+                                                               darken(mediumturquoise,30) .1em,
+                                                               darken(mediumturquoise,20) .1em,
+                                                               darken(mediumturquoise,20) .2em),
+                            repeating-linear-gradient(-140deg, darken(mediumturquoise,30),
+                                                               darken(mediumturquoise,30) .1em,
+                                                               darken(mediumturquoise,20) .1em,
+                                                               darken(mediumturquoise,20) .2em)
+          background-size: 100% 50%
+          background-position: 0 0, 0 100%
+          border-radius: .8em 2.4em 2.4em .8em / .8em
+          box-shadow: inset -1em 0 .2em alpha(crimson,.6)
+        &:after
+          width: 80%
+          height: .1em
+          right: 10%
+          top: calc(50% - .1em)
+          background-image: linear-gradient(to right, white(.4), white(.2))
+
+      .cloche-base
+        width: 8em
+        height: 2.7em
+        left: 1.8em
+        bottom: 0
+        background-color: darken(tan,5)
+        background-repeat: no-repeat
+        background-image: radial-gradient(ellipse, black(.85) 40%, transparent 60.5%),
+                          radial-gradient(ellipse, darken(tan,13) 50%, transparent 53%),
+                          linear-gradient(to right, black(.75) 10%, transparent 60%, black(.55) 85%),
+                          repeating-linear-gradient(to right, transparent, transparent 2%,
+                                                              black(.05) 2%, black(.05) 4%)
+        background-size: 70% 40%,
+                         120% 80%,
+                         100% 100%,
+                         100% 100%
+        background-position: 65% 18%,
+                             50% -20%,
+                             0 0,
+                             0 0
+        border-radius: 3.2em / .8em
+        box-shadow: .8em .2em .5em black(.4),
+                    2.4em .2em .5em black(.2),
+                    .8em 1.9em .5em -.8em black(.3)
+
+      .cloche-cactus
+        width: 6.4em
+        height: 47%
+        left: 2.6em
+        bottom: 1em
+        background-color: white(.1)
+        background-repeat: no-repeat
+        background-image: linear-gradient(to top, white(.3) 60%, white(0) 80%),
+                          radial-gradient(ellipse, black(.2) 10%, black(.1) 30%, transparent 30%)
+        background-size: 18% 100%, 100% 1.6em
+        background-position: right 2% top, center .2em
+        border-radius: 3.2em / 3.2em 3.2em .8em .8em
+        box-shadow: inset 0 0 .2em .3em black(.5),
+                    inset 1.1em 0 .3em white(.4),
+                    1.6em 0 .8em -.3em black(.2) 
+        &:before
+          width: 60%
+          height: 2em
+          left: 20%
+          bottom: .6em
+          background-color: lightcoral
+          background-repeat: no-repeat
+          background-image: radial-gradient(ellipse, darken(brown,10) 50%, transparent 54%)
+          background-size: 120% 50%
+          background-position: center -10%
+          border-radius: 1.6em / .5em .5em .8em .8em
+          box-shadow: inset -1.1em -.3em .3em black(.4),
+                      inset 0 -1.1em 0 -.3em black(.3)
+        &:after
+          width: 30%
+          height: calc(100% - 4em)
+          left: 35%
+          top: 2em
+          background-color: mediumseagreen
+          background-image: radial-gradient(circle, white(.6) 20%, white(0) 25%),
+                            repeating-linear-gradient(to right, transparent, transparent 4%,
+                                                                             black(.12) 6%, 
+                                                                             black(.12) 10%,
+                                                                             transparent 14%)
+          background-size: .5em .5em, 100% 100%
+          border-radius: 1em / 1em 1em .3em .3em
+          box-shadow: inset -.6em 0 .6em black(.5)
+        
