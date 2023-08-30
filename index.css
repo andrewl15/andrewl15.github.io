@@ -110,7 +110,7 @@ a.hyperlink:hover, a.hyperlink:active{
     padding: 10px 20px;
     font-size: large;
     background-color: rgb(15, 123, 255);;
-    color: #ffffff;
+    color: white;
     border: none;
     cursor: pointer;
     border-radius: 3px
