@@ -13,11 +13,25 @@
             <label for="check" class="checkbtn">
                 <i class="fa fa-bars"></i>
             </label>
-            <label class="name">Andrew Long</label>
+            <label class="name">
+                <span class="first-name">Andrew</span>
+                <span class="last-name">Long</span>
+            </label>
             <ul class="navbar">
                 <li><a class="active" href="index.html">Index</a></li>
                 <li><a href="aboutMe.html">About Me</a></li>
             </ul>
+            <script>
+                const menuCheckbox = document.getElementById('check');
+        
+                // Function to close the submenu
+                function closeSubMenu() {
+                    menuCheckbox.checked = false; // Uncheck the checkbox
+                }
+        
+                // Event listener to detect scrolling and close the submenu
+                window.addEventListener('scroll', closeSubMenu);
+            </script>
         </nav>
     </header>
 

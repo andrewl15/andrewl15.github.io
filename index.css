@@ -68,11 +68,17 @@ a.active,a:hover{
     nav ul li a{
         font-size: 16px;
     }
+    .last-name{
+        display: none;
+    }
 }
 
 @media (max-width: 858px){
     .checkbtn{
         display: block;
+        position: absolute;
+        right: 0px;
+        cursor: pointer;
     }
     ul{
         position: fixed;
@@ -80,9 +86,9 @@ a.active,a:hover{
         height: 100vh;
         background: #2c3e50;
         top: 80px;
-        left: -100;
+        left: -100%;
         text-align: center;
-        transition: all .5s;
+        transition: .3s;
     }
     nav ul li{
         display: block;
@@ -97,7 +103,7 @@ a.active,a:hover{
         color:#0082e6;
     }
     #check:checked ~ ul{
-        left: 0px;
+        left: 0;
     }
 }
 
@@ -146,7 +152,7 @@ a.hyperlink{
 
 a.hyperlink:hover, a.hyperlink:active{
     background: none;
-    color:red;
+    color:rgb(51, 0, 255);
     transition: 0s;
 }
 
