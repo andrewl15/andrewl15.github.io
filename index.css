@@ -160,7 +160,7 @@ main{
 img {
     border-radius: 10px;
     height: 400px;
-    box-shadow: 0 0 40px rgba(255, 255, 255, 0.242); /* Adjust the color and size as needed */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.163); /* Adjust the color and size as needed */
 }
 
 div {
@@ -178,10 +178,8 @@ h1, h2{
 a.hyperlink{
     font-size: 1.5em;
     color:antiquewhite;
-    text-decoration: none;
     text-align: center;
     display: block;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a.hyperlink:hover, a.hyperlink:active{
@@ -190,7 +188,8 @@ a.hyperlink:hover, a.hyperlink:active{
     transition: 0s;
 }
 
-.footer {
+footer {
+    font-weight: bold;
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -204,7 +203,30 @@ a.hyperlink:hover, a.hyperlink:active{
     color: antiquewhite;
     border: none;
     cursor: pointer;
-    border-radius: 3px
+    border-radius: 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+/*SCROLLBAR*/
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 25%);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 43%);
+  }
 
 
