@@ -3,7 +3,7 @@
 <head>
     <title>About Me</title>
     <link rel="stylesheet" type="text/css" href="aboutMe.css">
-    <meta name="viewport" content=""width=deve-width, initial-scale="1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -19,31 +19,22 @@
             </label>
             <ul class="navbar">
                 <li><a href="index.html">Index</a></li>
-                <li><a class="active" href="aboutMe.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li class="animated bounce"><a class="active" href="aboutMe.html">About Me</a></li>
             </ul>
-            <script>
-                const menuCheckbox = document.getElementById('check');
-        
-                // Function to close the submenu
-                function closeSubMenu() {
-                    menuCheckbox.checked = false; // Uncheck the checkbox
-                }
-        
-                // Event listener to detect scrolling and close the submenu
-                window.addEventListener('scroll', closeSubMenu);
-            </script>
+            <script src='index.js'></script>
         </nav>
     </header>
 
     <h1>Andrew Long</h1>
-    <div>
+    <div class="animate-left">
         <p>- Hello, my name is Andrew</p>
         <p>- I am a computer science BS student with a custom concentration in data science and software engineering</p>
         <p>- My favorite point in my time here was software engineering with the react tools.</p>
         <p>- I have spent a lot of time working with react typescript and I am looking forward to learn more in this class</p>
     </div>
     <h2>My favorite activities</h2>
-    <div>
+    <div class="animate-left">
         <p>Weightlifting: I have been lifting for about 5-6 years and its something I will never quit.</p>
         <p>Running: I picked up running back up two years ago and its one of the best ways to get into nature.</p>
         <p>Skiing: I went Skiing for the first time last winter and I plan to make it a routine.</p>
@@ -51,6 +42,10 @@
         <p>Nutrition: I have become a little obsessed with optimal nutrition in the last year or so.</p>
         <p>Gaming: I mean, who doesn't.</p>
     </div>
+    <footer>
+        <h2>Ways to Reach Me</h2>
+        <p>Email: andrewl@udel.edu</p>
+    </footer>
     
 </body>
 </html>

@@ -6,6 +6,32 @@
     box-sizing: border-box;
 }
 
+/* Bounce for Li*/
+.animated { 
+    background-repeat: no-repeat;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s; 
+    -webkit-animation-fill-mode: both; 
+    animation-fill-mode: both; 
+ }
+ 
+ @-webkit-keyframes bounce { 
+    0%, 20% {-webkit-transform: translateY(0);} 
+    10% {-webkit-transform: translateY(-7px);} 
+ } 
+
+ @keyframes bounce { 
+    0%, 20%{transform: translateY(0);} 
+    10% {transform: translateY(-7px);} 
+ }
+
+ .bounce { 
+    -webkit-animation-name: bounce; 
+    animation-name: bounce; 
+ }
+
+ /**/
+
 body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: rgb(24, 29, 34);
@@ -26,6 +52,7 @@ label {
     font-weight: bold;
 }
 
+/* Nav Bar */
 nav ul {
     float: right;
     margin-right: 20px;
@@ -108,10 +135,6 @@ a.active,a:hover{
     }
 }
 
-main{
-    text-align: center;
-}
-
 /* Add an animation on hover */
 nav ul li a::before {
     content: "";
@@ -130,18 +153,26 @@ nav ul li a:hover::before {
     transform: scaleX(1);
 }
 
+main{
+    text-align: center;
+}
+
 img {
     border-radius: 10px;
     height: 400px;
-    box-shadow: 0 0 50px rgba(211, 197, 255, 0.37); /* Adjust the color and size as needed */
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.242); /* Adjust the color and size as needed */
 }
-
 
 div {
     text-align: center;
     left: auto;
     right: auto;
-    padding-top: 40px;
+    padding-top: 30px;
+}
+
+h1, h2{
+    text-align: center;
+    padding-top: 20px;
 }
 
 a.hyperlink{
@@ -155,11 +186,11 @@ a.hyperlink{
 
 a.hyperlink:hover, a.hyperlink:active{
     background: none;
-    color:rgb(51, 0, 255);
+    color:rgb(164, 142, 255);
     transition: 0s;
 }
 
-.footer-buttons {
+.footer {
     display: flex;
     justify-content: space-between;
     padding: 20px;
