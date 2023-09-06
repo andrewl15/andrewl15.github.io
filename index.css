@@ -189,10 +189,14 @@ a.hyperlink:hover, a.hyperlink:active{
 }
 
 footer {
-    font-weight: bold;
+    position:fixed;
     display: flex;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: space-between; 
+    align-items: center;
+    background: rgb(24, 29, 34);
+    bottom: 0;
+    width: 100%; /* Ensure the footer spans the full width */
+    padding: 20px; /* Adjust padding as needed */
 }
 
 .left-button,

@@ -157,11 +157,34 @@ main{
     text-align: center;
 }
 
+img {
+    border-radius: 5px;
+    height: 350px;
+}
+
 div {
-    text-align: center;
     left: auto;
     right: auto;
+}
+
+li.left-li{
+    text-align: left;
+    font-size: 150%;
+    padding-left: 2%;
+}
+
+p{
+    margin: 0;
+    margin-top: auto;
+}
+
+div.info-left {
     padding-top: 30px;
+    padding-left: 5%;
+    display: flex;
+    flex-wrap: wrap; /* Add this property to allow text to wrap to the next line */
+    border-color: hsl(0, 0%, 25%);
+    border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
 }
 
 h1, h2{

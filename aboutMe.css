@@ -192,6 +192,7 @@ div {
 
 div.body-list{
     padding-top: 5px;
+    display: flex;
 }
 
 p{
@@ -200,6 +201,7 @@ p{
 
 footer {
     position: absolute;
+    text-align: center;
     left: 50%;
     bottom: 10px;
     transform: translate(-50%, 0%);
