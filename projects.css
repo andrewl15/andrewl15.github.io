@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
     box-sizing: border-box;
 }
 
@@ -167,23 +166,20 @@ div {
     right: auto;
 }
 
-li.left-li{
+.left-list{
     text-align: left;
-    font-size: 150%;
+    font-size: 140%;
+    padding-bottom: 1%;
     padding-left: 2%;
-}
-
-p{
-    margin: 0;
-    margin-top: auto;
+    border-bottom-width: 1px solid hsl(0, 0%, 25%); /* Add a border style */
 }
 
 div.info-left {
     padding-top: 30px;
     padding-left: 5%;
+    padding-bottom: 20px; 
     display: flex;
     flex-wrap: wrap; /* Add this property to allow text to wrap to the next line */
-    border-color: hsl(0, 0%, 25%);
     border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
 }
 
