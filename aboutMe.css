@@ -10,9 +10,9 @@
 .animate-left {
     position: relative;
     -webkit-animation-name: animateleft;
-    -webkit-animation-duration: 1s;
+    -webkit-animation-duration: .7s;
     animation-name: animateleft;
-    animation-duration: 1s;
+    animation-duration: .7s;
     z-index: -5;
 }
   
@@ -192,6 +192,7 @@ div {
 
 div.body-list{
     padding-top: 5px;
+    display: flex;
 }
 
 p{
@@ -200,8 +201,31 @@ p{
 
 footer {
     position: absolute;
+    text-align: center;
     left: 50%;
     bottom: 10px;
     transform: translate(-50%, 0%);
     -ms-transform: translate(-50%, 0%);
+}
+
+/*SCROLLBAR*/
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 25%);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 43%);
 }
