@@ -170,6 +170,9 @@ div {
     padding-top: 30px;
 }
 
+p{
+    text-align: center;
+}
 h1, h2{
     text-align: center;
     padding-top: 20px;
