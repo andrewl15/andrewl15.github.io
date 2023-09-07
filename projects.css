@@ -223,9 +223,14 @@ div.left-list{
 p.p-left{
     padding-top: .5%;
     padding-left: 5%;
+    text-align: left;
 }
 
-h1, h2, h3{
+p{
+    text-align: center;
+}
+
+h1, h2{
     text-align: center;
     padding-top: 2px;
     padding-bottom: 5px;
