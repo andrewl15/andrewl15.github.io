@@ -134,6 +134,39 @@ a.active,a:hover{
     }
 }
 
+@media (max-width: 1090px) {
+    img{
+        margin-left: 50%;
+        margin-right: 50%;
+    }
+    .project-image:hover {
+        background-color: transparent;
+    }
+    div.container{
+        padding-bottom: 20px;
+        border-color: hsl(0, 0%, 25%);
+        border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
+        text-align: center;
+    }
+    div.left-sub-container {
+        padding-top: 30px;
+        padding-left: 5%;
+        display: flex;
+        flex-wrap: wrap;
+    }   
+    div.left-list{
+        text-align: center;
+        font-size: 140%;
+        padding-left: 2%;
+    }
+    
+    p.p-left{
+        padding-top: .5%;
+        padding-left: 5%;
+    }
+}
+  
+
 /* Add an animation on hover */
 nav ul li a::before {
     content: "";
@@ -161,7 +194,7 @@ li{
 }
 
 div{
-    width: 97%;
+    width: 95%;
 }
 
 div.container{
@@ -183,7 +216,7 @@ img, a{
 
 div.left-list{
     text-align: left;
-    font-size: 150%;
+    font-size: 140%;
     padding-left: 2%;
 }
 
@@ -192,9 +225,9 @@ p.p-left{
     padding-left: 5%;
 }
 
-h1, h2{
+h1, h2, h3{
     text-align: center;
-    padding-top: 10px;
+    padding-top: 2px;
     padding-bottom: 5px;
 }
 
