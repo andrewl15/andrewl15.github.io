@@ -199,10 +199,8 @@ footer {
     padding: 20px; /* Adjust padding as needed */
 }
 
-.left-button,
-.right-button {
+.button-link{
     padding: 10px 20px;
-    font-size: large;
     background-color: hsl(0, 0%, 25%);
     color: antiquewhite;
     border: none;
