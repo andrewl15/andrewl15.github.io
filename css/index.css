@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
+    list-style: none;
     box-sizing: border-box;
 }
 
@@ -32,6 +33,7 @@
  /**/
 
 body {
+    overflow-x: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: rgb(24, 29, 34);
     color:antiquewhite;
@@ -54,7 +56,7 @@ label {
 /* Nav Bar */
 nav ul {
     float: right;
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 nav ul li {
@@ -77,13 +79,18 @@ a.active,a:hover{
     transition: .5s;
 }
 
-.checkbtn{
+.checkbtn, .xbtn{
     float: right;
     cursor: pointer;
     display: none;
+    width: 20px;
 }
 
 #check{
+    display: none;
+}
+
+#x{
     display: none;
 }
 
@@ -100,13 +107,14 @@ a.active,a:hover{
     }
 }
 
-@media (max-width: 858px){
+@media (max-width: 758px){
     .checkbtn{
         display: block;
         position: absolute;
         right: 0px;
         cursor: pointer;
     }
+    
     ul{
         position: fixed;
         width: 100%;
@@ -132,40 +140,30 @@ a.active,a:hover{
     #check:checked ~ ul{
         left: 0;
     }
-}
-
-@media (max-width: 1090px) {
-    img{
-        margin-left: 50%;
-        margin-right: 50%;
+    #check:checked ~ .checkbtn{
+        display: none;
     }
-    .project-image:hover {
-        background-color: transparent;
+    #check:checked ~ .xbtn{
+        display: block;
+        position: absolute;
+        right: 0px;
+        cursor: pointer;
     }
-    div.container{
-        padding-bottom: 20px;
-        border-color: hsl(0, 0%, 25%);
-        border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
-        text-align: center;
+    a.hyperlink {
+        font-size: 1em !important;
+        color: antiquewhite !important;
+        text-align: center !important;
     }
-    div.left-sub-container {
-        padding-top: 30px;
-        padding-left: 5%;
-        display: flex;
-        flex-wrap: wrap;
-    }   
-    div.left-list{
-        text-align: center;
-        font-size: 140%;
-        padding-left: 2%;
-    }
-    
-    p.p-left{
-        padding-top: .5%;
-        padding-left: 5%;
+    .button-link{
+        padding: 9px 15px !important;
+        background-color: hsl(0, 0%, 25%);
+        color: antiquewhite;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
 }
-  
 
 /* Add an animation on hover */
 nav ul li a::before {
@@ -189,51 +187,58 @@ main{
     text-align: center;
 }
 
-li{
-    padding-bottom: 2%;
+img {
+    border-radius: 10px;
+    height: 400px;
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.163); /* Adjust the color and size as needed */
 }
 
-div{
-    width: 95%;
-}
-
-div.container{
-    padding-bottom: 20px;
-    border-color: hsl(0, 0%, 25%);
-    border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
-}
-
-div.left-sub-container {
+div {
+    text-align: center;
+    left: auto;
+    right: auto;
     padding-top: 30px;
-    padding-left: 5%;
-    display: flex;
-}
-
-img, a{
-    border-radius: 5px;
-    height: 320px;
-}
-
-div.left-list{
-    text-align: left;
-    font-size: 140%;
-    padding-left: 3%;
-}
-
-p.p-left{
-    padding-top: .5%;
-    padding-left: 5%;
-    text-align: left;
 }
 
 p{
     text-align: center;
 }
-
 h1, h2{
     text-align: center;
-    padding-top: 2px;
-    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+a.hyperlink{
+    font-size: 1.5em;
+    color:antiquewhite;
+    text-align: center;
+    display: block;
+}
+
+a.hyperlink:hover, a.hyperlink:active{
+    background: none;
+    color:#0082e6;
+    transition: 0s;
+}
+
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #010409;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+}
+.button-link{
+    padding: 10px 15px;
+    background-color: hsl(0, 0%, 25%);
+    color: antiquewhite;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 /*SCROLLBAR*/
@@ -257,3 +262,5 @@ h1, h2{
   ::-webkit-scrollbar-thumb:hover {
     background: hsl(0, 0%, 43%);
   }
+
+

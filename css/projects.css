@@ -2,54 +2,37 @@
     padding: 0;
     margin: 0;
     text-decoration: none;
-    list-style: none;
     box-sizing: border-box;
 }
 
-/* Add animation to "page content" */
-.animate-left {
-    position: relative;
-    -webkit-animation-name: animateleft;
-    -webkit-animation-duration: .7s;
-    animation-name: animateleft;
-    animation-duration: .7s;
-    z-index: -5;
-}
-  
-@-webkit-keyframes animateleft {
-    from { left:-100px; opacity:0 } 
-    to { left:0px; opacity:1 }
-}
-  
-@keyframes animateleft { 
-    from{ left:-100px; opacity:0 } 
-    to{ left:0; opacity:1 }
-}
-
+/* Bounce for Li*/
 .animated { 
     background-repeat: no-repeat;
     -webkit-animation-duration: 1s;
     animation-duration: 1s; 
     -webkit-animation-fill-mode: both; 
     animation-fill-mode: both; 
-}
-
-@-webkit-keyframes bounce { 
+ }
+ 
+ @-webkit-keyframes bounce { 
     0%, 20% {-webkit-transform: translateY(0);} 
     10% {-webkit-transform: translateY(-7px);} 
-} 
+ } 
 
-@keyframes bounce { 
+ @keyframes bounce { 
     0%, 20%{transform: translateY(0);} 
     10% {transform: translateY(-7px);} 
-}
+ }
 
-.bounce { 
+ .bounce { 
     -webkit-animation-name: bounce; 
     animation-name: bounce; 
-}
+ }
+
+ /**/
 
 body {
+    overflow-x: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: rgb(24, 29, 34);
     color:antiquewhite;
@@ -69,6 +52,7 @@ label {
     font-weight: bold;
 }
 
+/* Nav Bar */
 nav ul {
     float: right;
     margin-right: 20px;
@@ -94,13 +78,18 @@ a.active,a:hover{
     transition: .5s;
 }
 
-.checkbtn{
+.checkbtn, .xbtn{
     float: right;
     cursor: pointer;
     display: none;
+    width: 20px;
 }
 
 #check{
+    display: none;
+}
+
+#x{
     display: none;
 }
 
@@ -117,13 +106,14 @@ a.active,a:hover{
     }
 }
 
-@media (max-width: 858px){
+@media (max-width: 758px){
     .checkbtn{
         display: block;
         position: absolute;
         right: 0px;
         cursor: pointer;
     }
+    
     ul{
         position: fixed;
         width: 100%;
@@ -149,10 +139,49 @@ a.active,a:hover{
     #check:checked ~ ul{
         left: 0;
     }
-    footer {
+    #check:checked ~ .checkbtn{
         display: none;
     }
+    #check:checked ~ .xbtn{
+        display: block;
+        position: absolute;
+        right: 0px;
+        cursor: pointer;
+    }
 }
+
+@media (max-width: 1090px) {
+    img{
+        margin-left: 50%;
+        margin-right: 50%;   
+    }
+    .project-image:hover {
+        background-color: transparent;
+    }
+    div.container{
+        padding-bottom: 20px;
+        border-color: hsl(0, 0%, 25%);
+        border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
+        text-align: center;
+    }
+    div.left-sub-container {
+        padding-top: 30px;
+        padding-left: 5%;
+        display: flex;
+        flex-wrap: wrap;
+    }   
+    div.left-list{
+        text-align: center;
+        font-size: 140%;
+        padding-left: 2%;
+    }
+    
+    p.p-left{
+        padding-top: .5%;
+        padding-left: 5%;
+    }
+}
+  
 
 /* Add an animation on hover */
 nav ul li a::before {
@@ -176,44 +205,59 @@ main{
     text-align: center;
 }
 
-/* ABOUT ME */
-h1, h2{
-    text-align: center;
-    padding-top: 20px;
+li{
+    padding-bottom: 2%;
 }
 
-div {
-    text-align: left;
-    padding-left: 30%;
-    left: auto;
-    right: auto;
-    padding-top: 2px;
+div{
+    width: 95%;
 }
 
-div.body-list{
-    padding-top: 5px;
+div.container{
+    padding-bottom: 20px;
+    border-color: hsl(0, 0%, 25%);
+    border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
+}
+
+div.left-sub-container {
+    padding-top: 30px;
+    padding-left: 5%;
     display: flex;
 }
 
-p{
-    padding-top: 10px;
+img, a{
+    border-radius: 5px;
+    height: 320px;
 }
 
-footer {
-    position: absolute;
+div.left-list{
+    text-align: left;
+    font-size: 140%;
+    padding-left: 3%;
+}
+
+p.p-left{
+    padding-top: .5%;
+    padding-left: 5%;
+    text-align: left;
+}
+
+p{
     text-align: center;
-    left: 50%;
-    bottom: 10px;
-    transform: translate(-50%, 0%);
-    -ms-transform: translate(-50%, 0%);
+}
+
+h1, h2{
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 5px;
 }
 
 /*SCROLLBAR*/
 /* width */
 ::-webkit-scrollbar {
     width: 7px;
-  }
-  
+}
+
 /* Track */
 ::-webkit-scrollbar-track {
     border-radius: 10px;
