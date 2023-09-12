@@ -106,10 +106,6 @@ a.active,a:hover{
     display: none;
 }
 
-#x{
-    display: none;
-}
-
 @media (max-width: 952px){
     label.name{
         font-size: 30px;
