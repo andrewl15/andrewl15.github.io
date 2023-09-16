@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Contact Page</title>
+    <link rel="stylesheet" type="text/css" href="./css/contact.css">
+    <link rel="stylesheet" type="text/css" href="./css/navbar.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/506c3b838d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("88x_SX4IW8CeweF6M");
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="check" class="checkbtn">
+            <label for="check" class="checkbtn">
+                <i class="fa fa-bars"></i>           
+            </label>
+            <label for="check" class="xbtn">
+                <i class="fa-solid fa-rectangle-xmark"></i>
+            </label>
+            <label class="name">
+                <span class="first-name">Andrew</span>
+                <span class="last-name">Long</span>
+            </label>
+            <ul class="navbar">
+                <li><a href="index.html">Index</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="aboutMe.html">About Me</a></li>
+                <li class="animated bounce"><a class="active" href="contact.html">Contact</a></li>
+            </ul>
+            <script src='./javascript/scroll.js'></script>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="contact-option">
+            <p>Anonymous Message!</p>
+            <button class="message" id="writeButton">✏️Write</button>
+        </div>
+        <div class="contact-option">
+            <p>Contact Form</p>
+            <button class="message" id="contactButton">📝Contact</button>
+        </div>
+    </div>
+    <!--Anonymous Popup-->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <p class="p-forms">Please write me a message</p>
+            <textarea class="messageText" id="messageText" placeholder="Write your message here..."></textarea>
+            <div id="anon-messageError" class="error-message"></div> 
+            <div class="button-container">
+                <button class="message" id="submitMessage">📬Submit</button>
+            </div>       
+        </div>
+    </div>
+    <!-- Contact Popup -->
+    <div class="popup" id="contactPopup">
+        <div class="contact-content">
+            <span class="close" id="closeContactPopup">&times;</span>
+            <p class="p-forms">Please fill out some information</p>
+            <textarea id="user_lname" placeholder="Last Name"></textarea>
+            <div id="lnameError" class="error-message"></div> 
+            
+            <textarea id="user_fname" placeholder="First Name"></textarea>
+            <div id="fnameError" class="error-message"></div> 
+            
+            <textarea id="user_email" placeholder="Email Address"></textarea>
+            <div id="emailError" class="error-message"></div>
+            <div class="error-message" id="email-error"></div>
+            
+            <textarea id="user_phone" placeholder="Phone Number" maxlength="12"></textarea>
+            <div id="phoneError" class="error-message"></div> 
+            <div class="error-message" id="phone-error"></div>
+            
+            <textarea class="contactMessage" id="user_message" placeholder="Short Message Here..."></textarea>
+            <div id="messageError" class="error-message"></div> 
+            
+            <div class="button-container">
+                <button class="message" id="submitContact">📬Submit</button>
+            </div>            
+        </div>
+    </div>
+    <script src='./javascript/contact.js'></script>
+</body>
+</html>

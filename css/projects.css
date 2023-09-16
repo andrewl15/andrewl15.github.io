@@ -1,206 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    box-sizing: border-box;
-}
-
-/* Bounce for Li*/
-.animated { 
-    background-repeat: no-repeat;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s; 
-    -webkit-animation-fill-mode: both; 
-    animation-fill-mode: both; 
- }
- 
- @-webkit-keyframes bounce { 
-    0%, 20% {-webkit-transform: translateY(0);} 
-    10% {-webkit-transform: translateY(-7px);} 
- } 
-
- @keyframes bounce { 
-    0%, 20%{transform: translateY(0);} 
-    10% {transform: translateY(-7px);} 
- }
-
- .bounce { 
-    -webkit-animation-name: bounce; 
-    animation-name: bounce; 
- }
-
- /**/
-
-body {
-    overflow-x: hidden;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: rgb(24, 29, 34);
-    color:antiquewhite;
-}
-
-nav {
-    background: #010409;
-    height: 80px;
-    width: 100%;
-}
-
-label {
-    color:antiquewhite;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
-    font-weight: bold;
-}
-
-/* Nav Bar */
-nav ul {
-    float: right;
-    margin-right: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
-}
-
-nav ul li a {
-    color:antiquewhite;
-    font-size: 17px;
-    text-transform: uppercase;
-    padding: 7px 13px;
-    border-radius: 3px;
-    position: relative;
-}
-
-a.active,a:hover{
-    background: hsl(0, 0%, 25%);
-    transition: .5s;
-}
-
-.checkbtn, .xbtn{
-    float: right;
-    cursor: pointer;
-    display: none;
-    width: 20px;
-}
-
-#check{
-    display: none;
-}
-
-@media (max-width: 952px){
-    label.name{
-        font-size: 30px;
-        padding-left: 50px;
-    }
-    nav ul li a{
-        font-size: 16px;
-    }
-    .last-name{
-        display: none;
-    }
-}
-
-@media (max-width: 758px){
-    .checkbtn{
-        display: block;
-        position: absolute;
-        right: 0px;
-        cursor: pointer;
-    }
-    
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: rgb(24, 29, 34);
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: .3s;
-    }
-    nav ul li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-    }
-    a:hover, a.active{
-        background: none;
-        color:#0082e6;
-    }
-    #check:checked ~ ul{
-        left: 0;
-    }
-    #check:checked ~ .checkbtn{
-        display: none;
-    }
-    #check:checked ~ .xbtn{
-        display: block;
-        position: absolute;
-        right: 0px;
-        cursor: pointer;
-    }
-}
-
-@media (max-width: 1090px) {
-    img{
-        margin-left: 50%;
-        margin-right: 50%;   
-    }
-    .project-image:hover {
-        background-color: transparent;
-    }
-    div.container{
-        padding-bottom: 20px;
-        border-color: hsl(0, 0%, 25%);
-        border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
-        text-align: center;
-    }
-    div.left-sub-container {
-        padding-top: 30px;
-        padding-left: 5%;
-        display: flex;
-        flex-wrap: wrap;
-    }   
-    div.left-list{
-        text-align: center;
-        font-size: 140%;
-        padding-left: 2%;
-    }
-    
-    p.p-left{
-        padding-top: .5%;
-        padding-left: 5%;
-    }
-}
-  
-
-/* Add an animation on hover */
-nav ul li a::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: antiquewhite;
-    transform: scaleX(0);
-    transform-origin: bottom;
-    transition: transform 0.3s ease;
-}
-
-nav ul li a:hover::before {
-    transform: scaleX(1);
-}
-
-main{
-    text-align: center;
-}
-
 li{
     padding-bottom: 2%;
 }
@@ -248,24 +45,22 @@ h1, h2{
     padding-bottom: 5px;
 }
 
-/*SCROLLBAR*/
-/* width */
-::-webkit-scrollbar {
-    width: 7px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: hsl(0, 0%, 25%);
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: hsl(0, 0%, 43%);
+@media (max-width: 1090px) {
+    div.container {
+        border-color: hsl(0, 0%, 25%);
+        border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
+        text-align: center;
+    }
+    div.left-sub-container {
+        flex-direction: column; /* Display items in a column layout */
+        align-items: center; /* Center items horizontally */
+    }
+    div.left-list {
+        display: none;
+    }
+    p.p-left {
+        padding-top: .5%;
+        padding-left: 5%;
+        text-align: center;
+    }
 }

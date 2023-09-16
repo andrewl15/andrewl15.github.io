@@ -1,0 +1,155 @@
+p {
+    font-size: xx-large;
+    font-weight: 100;
+    padding-bottom: 10%;
+    padding-top: 7%;
+}
+
+div.container {
+    padding-top: 5%;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+div.contact-option {
+    flex: 1; /* Ensure both boxes take up equal space */
+    min-width: 400px; /* Set a minimum width for the boxes */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #010409;
+    color: antiquewhite;
+    border: 4px solid hsl(0, 0%, 25%);
+    border-radius: 3px;
+    padding: 20px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 20px; /* Add space between contact options */
+}
+
+.message {
+    padding: 10px 20px;
+    font-size: 22px;
+    background: hsl(0, 0%, 25%);
+    color: antiquewhite;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.message:hover {
+    transform: scale(1.05);
+}
+
+/* Add your CSS styles for the popup and other elements here */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    border: 4px solid hsl(0, 0%, 25%);
+    background: #010409;
+    border-radius: 5px;
+    padding: 20px;
+    height: 50%;
+    width: 60%; /* Increase the width as needed */
+    max-width: 600px; /* Set a maximum width if desired */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+textarea.messageText {
+    width: 90%;
+    height: 50%;
+}
+
+.contact-content {
+    border: 4px solid hsl(0, 0%, 25%);
+    background: #010409;
+    display: flex;
+    flex-direction: column;    
+    border-radius: 5px;
+    padding: 20px;
+    height: 90%;
+    width: 60%; /* Increase the width as needed */
+    max-width: 600px; /* Set a maximum width if desired */
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+p.p-forms{
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+textarea {
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 7%;
+    color: #010409;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.button-container {
+    text-align: center; /* Center the buttons horizontally */
+    margin-top: 20px; /* Add margin to create top space */
+}
+
+.submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+textarea.contactMessage{
+    height: 20%;
+}
+
+.error-message{
+    color: #ff8181;
+    text-align: center;
+}
+
+@media (max-width: 50%) {
+    div.container {
+        padding-top: 5%;
+        flex-direction: column;
+    }
+
+    div.contact-option {
+        flex: 1; /* Ensure both boxes take up equal space */
+        margin-right: 0; /* Remove the right margin on smaller screens */
+    }
+}
