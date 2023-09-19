@@ -112,12 +112,19 @@ document.getElementById("submitContact").addEventListener("click", (e) => {
     if (lastName === "" || firstName === "" || email === "" || !emailPattern.test(email) || phoneNumber === "" || message === "") {
         document.getElementById("lnameError").scrollIntoView();
     } else {
+        emailjs.init("x9cQ8PtXlRNn8pbZt"); //init email service
         // Use the form element when calling emailjs.send
-        emailjs.send("service_jvi8adj", "template_434468s", contactForm).then(
+        emailjs.sendForm("service_jvi8adj", "template_434468s", contactForm, {
+            user_lname: lastName,
+            user_fname: firstName,
+            user_email: email,
+            user_phone: phoneNumber,
+            user_message: message,
+        }).then(
             function (response) {
                 console.log("Email sent successfully:", response);
                 // Optionally, reset the form or show a success message
-                contactForm.reset();
+                document.getElementById("contactForm").reset();
                 contactPopup.style.display = "none";
             },
             function (error) {
