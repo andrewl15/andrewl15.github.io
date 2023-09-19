@@ -59,7 +59,12 @@ closeContactPopupButton.addEventListener("click", () => {
     contactPopup.style.display = "none";
 });
 
-document.getElementById("submitContact").addEventListener("click", () => {
+document.getElementById("submitContact").addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent the form from submitting as a traditional HTML form
+
+    // Get a reference to the form by its id
+    const contactForm = document.getElementById("contactForm");
+
     // Get values from the input fields
     const lastName = document.getElementById("user_lname").value;
     const firstName = document.getElementById("user_fname").value;
@@ -95,7 +100,7 @@ document.getElementById("submitContact").addEventListener("click", () => {
 
     if (phoneNumber === "") {
         document.getElementById("phoneError").textContent = "Please enter your Phone Number.";
-    } else if(!phonePattern.test(phoneNumber)) {
+    } else if (!phonePattern.test(phoneNumber)) {
         document.getElementById("phoneError").textContent = "Invalid phone number, make sure you add a ' - '.";
     }
 
@@ -107,7 +112,9 @@ document.getElementById("submitContact").addEventListener("click", () => {
     if (lastName === "" || firstName === "" || email === "" || !emailPattern.test(email) || phoneNumber === "" || message === "") {
         document.getElementById("lnameError").scrollIntoView();
     } else {
-        emailjs.send("service_jvi8adj", "template_434468s", {
+        emailjs.init("x9cQ8PtXlRNn8pbZt"); //init email service
+        // Use the form element when calling emailjs.send
+        emailjs.sendForm("service_jvi8adj", "template_434468s", contactForm, {
             user_lname: lastName,
             user_fname: firstName,
             user_email: email,
@@ -117,6 +124,7 @@ document.getElementById("submitContact").addEventListener("click", () => {
             function (response) {
                 console.log("Email sent successfully:", response);
                 // Optionally, reset the form or show a success message
+                document.getElementById("contactForm").reset();
                 contactPopup.style.display = "none";
             },
             function (error) {
@@ -124,11 +132,5 @@ document.getElementById("submitContact").addEventListener("click", () => {
                 // Optionally, show an error message to the user
             }
         );
-        console.log("Last Name:", lastName);
-        console.log("First Name:", firstName);
-        console.log("Email Address:", email);
-        console.log("Phone Number:", phoneNumber);
-        console.log("Message:", message);
-        contactPopup.style.display = "none";
     }
 });

@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/506c3b838d.js" crossorigin="anonymous"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        emailjs.init("88x_SX4IW8CeweF6M");
-    </script>
 </head>
 <body>
     <header>
@@ -57,32 +54,34 @@
         </div>
     </div>
     <!-- Contact Popup -->
-    <div class="popup" id="contactPopup">
-        <div class="contact-content">
-            <span class="close" id="closeContactPopup">&times;</span>
-            <p class="p-forms">Please fill out some information</p>
-            <textarea id="user_lname" placeholder="Last Name"></textarea>
-            <div id="lnameError" class="error-message"></div> 
-            
-            <textarea id="user_fname" placeholder="First Name"></textarea>
-            <div id="fnameError" class="error-message"></div> 
-            
-            <textarea id="user_email" placeholder="Email Address"></textarea>
-            <div id="emailError" class="error-message"></div>
-            <div class="error-message" id="email-error"></div>
-            
-            <textarea id="user_phone" placeholder="Phone Number" maxlength="12"></textarea>
-            <div id="phoneError" class="error-message"></div> 
-            <div class="error-message" id="phone-error"></div>
-            
-            <textarea class="contactMessage" id="user_message" placeholder="Short Message Here..."></textarea>
-            <div id="messageError" class="error-message"></div> 
-            
-            <div class="button-container">
-                <button class="message" id="submitContact">📬Submit</button>
-            </div>            
+    <form id="contactForm">
+        <div class="popup" id="contactPopup">
+            <div class="contact-content">
+                <span class="close" id="closeContactPopup">&times;</span>
+                <p class="p-forms">Please fill out some information</p>
+                <textarea id="user_lname" placeholder="Last Name"></textarea>
+                <div id="lnameError" class="error-message"></div> 
+                
+                <textarea id="user_fname" placeholder="First Name"></textarea>
+                <div id="fnameError" class="error-message"></div> 
+                
+                <textarea id="user_email" placeholder="Email Address"></textarea>
+                <div id="emailError" class="error-message"></div>
+                <div class="error-message" id="email-error"></div>
+                
+                <textarea id="user_phone" placeholder="Phone Number" maxlength="12"></textarea>
+                <div id="phoneError" class="error-message"></div> 
+                <div class="error-message" id="phone-error"></div>
+                
+                <textarea class="contactMessage" id="user_message" placeholder="Short Message Here..."></textarea>
+                <div id="messageError" class="error-message"></div> 
+                
+                <div class="button-container">
+                    <button class="message" id="submitContact">📬Submit</button>
+                </div>            
+            </div>
         </div>
-    </div>
+    </form>    
     <script src='./javascript/contact.js'></script>
 </body>
 </html>
