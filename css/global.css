@@ -5,6 +5,12 @@
     list-style: none;
     box-sizing: border-box;
 }
+:root{
+    --text-color: antiquewhite;
+    --bg-color: #161b22;
+    --off-color: #010409;
+    --hl-color: hsl(0, 0%, 25%);
+}
 
 /* Bounce for Li*/
 .animated { 
@@ -35,18 +41,18 @@
 body {
     overflow-x: hidden;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: #161b22;
+    background: var(--bg-color);
     color:antiquewhite;
 }
 
 nav {
-    background: #010409;
+    background: var(--off-color);
     height: 80px;
     width: 100%;
 }
 
 label {
-    color:antiquewhite;
+    color:var(--text-color);
     font-size: 35px;
     line-height: 80px;
     padding: 0 100px;
@@ -66,7 +72,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color:antiquewhite;
+    color:var(--text-color);
     font-size: 17px;
     text-transform: uppercase;
     padding: 7px 13px;
@@ -75,7 +81,7 @@ nav ul li a {
 }
 
 a.active,a:hover{
-    background: hsl(0, 0%, 25%);
+    background: var(--hl-color);
     transition: .5s;
 }
 
@@ -157,7 +163,7 @@ nav ul li a::before {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: antiquewhite;
+    background-color: var(--text-color);
     transform: scaleX(0);
     transform-origin: bottom;
     transition: transform 0.3s ease;
@@ -180,7 +186,7 @@ nav ul li a:hover::before {
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: hsl(0, 0%, 25%);
+    background: var(--hl-color);
     border-radius: 10px;
   }
   
