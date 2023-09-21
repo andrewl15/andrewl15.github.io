@@ -121,6 +121,14 @@ document.getElementById("submitContact").addEventListener("click", (e) => {
                 // Optionally, reset the form or show a success message
                 document.getElementById("contactForm").reset();
                 contactPopup.style.display = "none";
+
+                const emailConfirmDiv = document.querySelector(".email-confirm");
+                emailConfirmDiv.style.bottom = "10px"; // Slide it up from the bottom
+
+                // After a delay of 1000 milliseconds (1 second), hide the "email-sent" div
+                setTimeout(function () {
+                    emailConfirmDiv.style.bottom = "-100%"; // Slide it back down and off the screen
+                }, 1000);
             })
             .catch(function (error) {
                 console.error("Email could not be sent:", error);
