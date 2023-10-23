@@ -42,33 +42,3 @@ footer {
     width: 100%;
     height: 55px;
 }
-.button-link{
-    padding: 10px 15px;
-    background-color: hsl(0, 0%, 25%);
-    color: antiquewhite;
-    border: none;
-    cursor: pointer;
-    border-radius: 3px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-@media (max-width: 758px){
-    .hyperlink {
-        font-size: 1rem !important;
-        color: antiquewhite;
-        text-align: center;
-    }
-    .hyperlink:hover, .hyperlink:active{
-        color:#0082e6;
-        transition: 0s;
-    }
-    a.button-link{
-        padding: 9px 15px;
-        background-color: hsl(0, 0%, 25%);
-        color: antiquewhite;
-        border: none;
-        cursor: pointer;
-        border-radius: 3px;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    }
-}
