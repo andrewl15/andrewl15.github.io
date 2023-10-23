@@ -1,51 +1,23 @@
-/* ABOUT ME */
-/* Add animation to "page content" */
-.animate-left {
-    position: relative;
-    -webkit-animation-name: animateleft;
-    -webkit-animation-duration: .7s;
-    animation-name: animateleft;
-    animation-duration: .7s;
-    z-index: -5;
-}
-  
-@-webkit-keyframes animateleft {
-    from { left:-100px; opacity:0 } 
-    to { left:0px; opacity:1 }
-}
-  
-@keyframes animateleft { 
-    from{ left:-100px; opacity:0 } 
-    to{ left:0; opacity:1 }
-}
-
 h1, h2{
     text-align: center;
     padding-top: 20px;
 }
 
-div {
-    text-align: left;
-    padding-left: 30%;
-    left: auto;
-    right: auto;
+.wrapper{
+    text-align: center;
     padding-top: 2px;
+    justify-content: center;
+    align-items: center;
 }
 
-div.body-list{
-    padding-top: 5px;
-    display: flex;
-}
-
-p{
+.info p{
     padding-top: 10px;
 }
 
 footer {
     position: absolute;
-    text-align: center;
-    left: 50%;
-    bottom: 10px;
-    transform: translate(-50%, 0%);
-    -ms-transform: translate(-50%, 0%);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center; /* Center text horizontally */
 }

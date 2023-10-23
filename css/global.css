@@ -49,6 +49,7 @@ nav {
     background: var(--off-color);
     height: 80px;
     width: 100%;
+    user-select: none;
 }
 
 label {
@@ -100,7 +101,7 @@ a.active,a:hover{
     position: absolute;
     right: -100%;
     width: 250px;
-    height: 33vh;
+    height: 20vh;
     background: var(--hl-color);
     display: flex;
     flex-direction: column;
@@ -113,19 +114,15 @@ a.active,a:hover{
     right: 0;
 }
 
-/* Adjust the margin for the first item to control the spacing */
-.dropdown-item:first-child a {
-    margin-top: 0; /* You can set this value as needed */
-}
-
 .dropdown-item a {
+    font-size: large;
     text-transform: uppercase;
     display: block;
-    margin: 0;
     padding: 0px 25px;
     transition: all .50s ease;
     color: var(--text-color);
-    padding: 0;
+    margin: 15px 0;
+    padding: 0px 25px;
 }
 
 .dropdown-item a:hover {
@@ -136,6 +133,42 @@ a.active,a:hover{
 
 .class-links-btn {
     cursor: pointer;
+}
+
+footer {
+    background-color: var(--bg-color);
+    padding-bottom: 20px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.contact-info a{
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    padding-right: 1%;
+}
+.contact-info p{
+    padding-right: 1%;
+    font-size: large;
+    color: var(--text-color)
+}
+.contact-info i{
+    font-size: 40px;
+}
+
+footer h3 {
+    margin-bottom: 20px;
+    font-size: 30px;
 }
 
 
@@ -206,7 +239,7 @@ a.active,a:hover{
 }
 
 /* Add an animation on hover */
-nav ul li a::before {
+nav ul li a:not(.class-links-btn)::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -219,7 +252,7 @@ nav ul li a::before {
     transition: transform 0.3s ease;
 }
 
-nav ul li a:hover::before {
+nav ul li a:not(.class-links-btn):hover::before {
     transform: scaleX(1);
 }
 
