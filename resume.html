@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <title>About Me</title>
-    <link rel="stylesheet" type="text/css" href="./css/aboutMe.css">
+    <title>Resume Page</title>
+    <link rel="stylesheet" type="text/css" href="./css/resume.css">
     <link rel="stylesheet" type="text/css" href="./css/global.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -12,7 +12,7 @@
         <nav>
             <input type="checkbox" id="check" class="checkbtn">
             <label for="check" class="checkbtn">
-                <i class="ri-menu-line"></i>          
+                <i class="ri-menu-line"></i>    
             </label>
             <label for="check" class="xbtn">
                 <i class="ri-close-fill"></i>
@@ -24,36 +24,21 @@
             <ul class="navbar">
                 <li><a href="index.html">Index</a></li>
                 <li><a href="projects.html">Projects</a></li>
-                <li class="animated bounce"><a class="active" href="aboutMe.html">About Me</a></li>
+                <li><a href="aboutMe.html">About Me</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="resume.html">Resume</a></li>
+                <li class="animated bounce"><a class="active" href="resume.html">Resume</a></li>
                 <li><a class="class-links-btn" id="class-links-btn">Class Links ⬅️</a></li>
             </ul>
             <div class="class-dropdown">
                 <div class="dropdown-item"><a class="class-links" href="https://mattm401.github.io/">Course Website</a></div>
                 <div class="dropdown-item"><a class="class-links" href="https://yang-yu-xing.github.io/">NEXT STUDENT</a></div>
                 <div class="dropdown-item"><a class="class-links" href="https://estipes.github.io/">PREVIOUS STUDENT</a></div>
-            </div>  
+            </div>            
             <script src='./javascript/scroll.js'></script>
         </nav>
     </header>
-    <div class="wrapper">
-        <h1>Andrew Long</h1>
-        <div class="info">
-            <p>- Hello, my name is Andrew</p>
-            <p>- I am a computer science BS student with a custom concentration in data science and software engineering</p>
-            <p>- My favorite point in my time here was software engineering with the react tools.</p>
-            <p>- I have spent a lot of time working with react typescript and I am looking forward to learn more in this class</p>
-        </div>
-        <h2>My favorite activities</h2>
-        <div class="info">
-            <p>Weightlifting: I have been lifting for about 5-6 years and its something I will never quit.</p>
-            <p>Running: I picked up running back up two years ago and its one of the best ways to get into nature.</p>
-            <p>Skiing: I went Skiing for the first time last winter and I plan to make it a routine.</p>
-            <p>Fishing: Been fishing since I was a kid, excited for the trout season here at white clay creek.</p>
-            <p>Nutrition: I have become a little obsessed with optimal nutrition in the last year or so.</p>
-            <p>Gaming: I mean, who doesn't.</p>
-        </div>
+    <div class="container">
+        <a href="./pics/resume.pdf">Click to see my Resume</a>
     </div>
     <footer>
         <h3>My Contact Information</h3>
@@ -64,5 +49,6 @@
         </div>
     </footer>
     <script src="./javascript/navbar.js"></script>
+    <script src="./javascript/resume.js"></script>
 </body>
 </html>

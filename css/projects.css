@@ -11,13 +11,13 @@ div.container{
 div.left-sub-container {
     width: 100%;
     padding-left: 5%;
-    padding-top: 1%;
+    padding-top: 3%;
     display: flex;
 }
 div.right-sub-container {
     width: 100%;
-    padding-left: 5%;
-    padding-top: 1%;
+    padding-right: 5%;
+    padding-top: 3%;
     display: flex;
 }
 /* images */
@@ -42,11 +42,12 @@ div.left-list{
     text-align: left;
     font-size: 140%;
     padding-left: 3%;
+    padding-right: 5%;
 }
 div.right-list{
     text-align: left;
     font-size: 140%;
-    padding-right: 3%;
+    padding-left: 5%;
 }
 
 p.p-left{
@@ -58,7 +59,7 @@ p.p-left{
 }
 p.p-right{
     padding-top: .5%;
-    padding-right: 140px;
+    padding-right: 70px;
     padding-bottom: 1%;
     text-align: right;
     border-bottom: 2px solid hsl(0, 0%, 25%); /* Add a border style */
