@@ -5,17 +5,17 @@
     <link rel="stylesheet" type="text/css" href="./css/index.css">
     <link rel="stylesheet" type="text/css" href="./css/global.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/506c3b838d.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <nav>
             <input type="checkbox" id="check" class="checkbtn">
             <label for="check" class="checkbtn">
-                <i class="fa fa-bars"></i>           
+                <i class="ri-menu-line"></i>    
             </label>
             <label for="check" class="xbtn">
-                <i class="fa-solid fa-rectangle-xmark"></i>
+                <i class="ri-close-fill"></i>
             </label>
             <label class="name">
                 <span class="first-name">Andrew</span>
@@ -26,23 +26,40 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="aboutMe.html">About Me</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a class="class-links-btn" id="class-links-btn">Class Links ⬅️</a></li>
             </ul>
+            <div class="class-dropdown">
+                <div class="dropdown-item"><a class="class-links" href="https://mattm401.github.io/">Course Website</a></div>
+                <div class="dropdown-item"><a class="class-links" href="https://yang-yu-xing.github.io/">NEXT STUDENT</a></div>
+                <div class="dropdown-item"><a class="class-links" href="https://estipes.github.io/">PREVIOUS STUDENT</a></div>
+            </div>            
             <script src='./javascript/scroll.js'></script>
         </nav>
     </header>
-
-    <h1>Hello 👋, my name is Andrew Long,</h1>
-    <h2>I go by Andrew</h2>
-    <p>Course: CISC474</p>
-    <p>Assignment: Personal Web Page 1</p>
-    <p>Email: andrewl@udel.edu</p>
-    <div>
-        <img src="./pics/me.jpg" alt="Me in Germnany">
+    <div class="container">
+        <div class="home-img">
+            <div class="glowing-circle">
+                <div class="image">
+                    <img src="./pics/me.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="info">
+            <p>Hi,👋 My name is Andrew Long</p>
+            <p>I am a computer science student from the University of Delaware</p>
+            <p>My goals with this site was to get better at CSS and general HTML structuring</p>
+            <p></p>
+        </div>
     </div>
     <footer>
-        <a class="button-link" href="https://estipes.github.io/">PREVIOUS STUDENT</a>
-        <a class="hyperlink" href="https://mattm401.github.io/">Link to Course Website</a>
-        <a class="button-link" href="https://yang-yu-xing.github.io/">NEXT STUDENT</a>    
+        <h3>My Contact Information</h3>
+        <div class="contact-info">
+            <a href="https://github.com/andrewl15"><i class="ri-github-fill"></i><p>Github</p></a>
+            <a href="https://www.linkedin.com/in/andrew-long-457171164/"><i class="ri-linkedin-box-fill"></i><p>Linkedin</p></a>
+            <i class="ri-mail-line"></i><p>andrewl@udel.edu</p>
+        </div>
     </footer>
+    <script src="./javascript/navbar.js"></script>
 </body>
 </html>

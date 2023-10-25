@@ -1,0 +1,19 @@
+.container{
+    text-align: center;
+    padding: 15%;
+    font-size: 50px;
+}
+.container a{
+    color: antiquewhite;
+}
+.container a:hover{
+    text-decoration: underline;
+    background: none;
+}
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center; /* Center text horizontally */
+}

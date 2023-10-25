@@ -179,6 +179,10 @@ textarea.contactMessage{
     text-align: center;
     border-radius: 3px;
 }
+.email-sent i{
+    color: #64CD8A;
+    font-size: 60px;
+}
 
 
 @media (max-width: 50%) {

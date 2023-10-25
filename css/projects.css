@@ -2,25 +2,31 @@ li{
     padding-bottom: 2%;
 }
 
-div{
-    width: 95%;
-}
-
 div.container{
+    width: 100%;
     padding-bottom: 20px;
     border-color: hsl(0, 0%, 25%);
-    border-bottom: 1px solid hsl(0, 0%, 25%); /* Add a border style */
 }
 
 div.left-sub-container {
-    padding-top: 30px;
+    width: 100%;
     padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 3%;
     display: flex;
 }
 
-img, a{
+/* images */
+img{
     border-radius: 5px;
-    height: 320px;
+    max-width: 500px; /* Adjust to your desired maximum width */
+    max-height: 320px; /* Adjust to your desired maximum height */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.163); /* Adjust the color and size as needed */
+}
+a.project-image-left{
+    border-radius: 5px;
+    max-width: 500px; /* Adjust to your desired maximum width */
+    max-height: 320px; /* Adjust to your desired maximum height */
 }
 
 div.left-list{
@@ -32,19 +38,25 @@ div.left-list{
 p.p-left{
     padding-top: .5%;
     padding-left: 5%;
+    padding-bottom: 3%;
     text-align: left;
+    border-bottom: 2px solid hsl(0, 0%, 25%); /* Add a border style */
 }
 
-p{
-    text-align: center;
+div.project-title{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 100%;
+    padding-top: 2%;
+    text-decoration: underline;
 }
-
-h1, h2{
-    text-align: center;
-    padding-top: 2px;
-    padding-bottom: 5px;
+h2{
+    text-align: left;
+    font-size: 25px;
+    margin-bottom: 1%;
+    text-decoration: underline;
 }
-
 @media (max-width: 1090px) {
     div.container {
         border-color: hsl(0, 0%, 25%);
@@ -55,10 +67,22 @@ h1, h2{
         flex-direction: column; /* Display items in a column layout */
         align-items: center; /* Center items horizontally */
     }
+    div.right-sub-container {
+        flex-direction: column; /* Display items in a column layout */
+        align-items: center; /* Center items horizontally */
+    }
     div.left-list {
         display: none;
     }
+    h2 {
+        display: none;
+    }
     p.p-left {
+        padding-top: .5%;
+        padding-left: 5%;
+        text-align: center;
+    }
+    p.p-right {
         padding-top: .5%;
         padding-left: 5%;
         text-align: center;

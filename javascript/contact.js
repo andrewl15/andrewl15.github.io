@@ -125,9 +125,8 @@ document.getElementById("submitContact").addEventListener("click", (e) => {
                 const emailConfirmDiv = document.querySelector(".email-confirm");
                 emailConfirmDiv.style.bottom = "10px"; // Slide it up from the bottom
 
-                // After a delay of 1000 milliseconds (1 second), hide the "email-sent" div
                 setTimeout(function () {
-                    emailConfirmDiv.style.bottom = "-100%"; // Slide it back down and off the screen
+                    emailConfirmDiv.style.bottom = "-100%"; 
                 }, 1000);
             })
             .catch(function (error) {
