@@ -5,9 +5,9 @@ h1, h2{
 
 .wrapper{
     text-align: center;
-    padding-top: 2px;
     justify-content: center;
     align-items: center;
+    padding-top: 5%;
 }
 
 .info p{

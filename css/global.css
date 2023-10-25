@@ -176,7 +176,7 @@ footer h3 {
 /* Rest of your CSS styles for the dropdown */
 
 
-@media (max-width: 952px){
+@media (max-width: 1280px){
     label.name{
         font-size: 30px;
         padding-left: 50px;
@@ -189,7 +189,7 @@ footer h3 {
     }
 }
 
-@media (max-width: 858px){
+@media (max-width: 1090px){
     .checkbtn{
         display: block;
         position: absolute;
