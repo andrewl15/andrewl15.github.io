@@ -1,6 +1,6 @@
 ### Hi there 👋
 ##
-## I'm Andrew. I am a University of Delaware student majoring in Computer Science BS with a custom concentration in software engineering and data science.
+## I'm Andrew. I am a University of Delaware alumni who majored in Computer Science BS with a custom concentration in software engineering and data science.
 ##
 ## My interests include Weightlifting, Running, Nutritional health, and video games.
 
