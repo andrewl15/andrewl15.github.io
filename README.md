@@ -1,25 +1,6 @@
 ### Hi there 👋
 ##
-## I'm Andrew. I am a University of Delaware alumni who majored in Computer Science BS with a custom concentration in software engineering and data science.
+## I'm Andrew. I am a University of Delaware and Tech Elevator alumni who majored in Computer Science BS with a custom concentration in software engineering and data science.
 ##
 ## My interests include Weightlifting, Running, Nutritional health, and video games.
 
-<!--
-**andrewl15/andrewl15** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-A fitness page with my friend 
-A personal GitHub page with my information
-A group project for the end of this semester
-- 🌱 I’m currently learning ...
-23F-CISC474-010: Advanced Web Technologies
-23F-CISC482-010: Introduction to Human-Computer Interaction
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
